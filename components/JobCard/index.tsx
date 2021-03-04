@@ -8,7 +8,6 @@ interface JobCardProps {}
 export const JobCard: React.FC<JobCardProps> = ({}) => { 
 
     const { Meta } = Card;
-    const [fillHeart, setFillHeart] = useState(false);
 
     return (
         <JobCardStyles>

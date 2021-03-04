@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyledLeftView } from './styles';
 import { SaveOutlined } from '@ant-design/icons'
 import {
@@ -11,18 +11,31 @@ import {
 interface LeftViewProps {}
 export const LeftView: React.FC<LeftViewProps> = ({}) => { 
     const [radio, setRadio] = useState(false)
+    const [isDesktop, setDesktop] = useState(window.innerWidth > 1450);
+
+    const updateMedia = () => {
+      setDesktop(window.innerWidth < 1200);
+    };
+
+    useEffect(() => {
+      window.addEventListener("resize", updateMedia);
+      return () => window.removeEventListener("resize", updateMedia);
+    });
 
     return (
-        <StyledLeftView>
+        <StyledLeftView isDesktop={isDesktop}>
         <h2
         className='title'
         > StriveDash
         </h2>
-        <div className='saved-jobs-container'>
+        <div 
+        hidden={isDesktop}
+        className='saved-jobs-container'>
         <SaveOutlined className='saved-jobs-icon'/>
         <a>Saved jobs</a>
         </div>
         <Form
+        hidden={isDesktop}
         className='form-container'
         labelCol={{ span: 4 }}
         wrapperCol={{ span: 14 }}

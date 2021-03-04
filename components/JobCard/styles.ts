@@ -42,4 +42,18 @@ export const JobCardStyles = styled.div`
     .posted-date {
         color: #bfbfbf;
     }
+
+
+    @media (max-width: 1200px) {
+
+        .main-container {
+            flex-direction: column;
+        }
+
+        .card-container {
+           margin: 0;
+           padding: 0;
+        }
+    }
+
 `

@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 
+interface Props {
+    isDesktop: boolean
+}
+
+
 export const StyledLeftView = styled.div`
     text-align: left;
     padding-left: 50px;
@@ -58,6 +63,12 @@ export const StyledLeftView = styled.div`
 
     .radio {
         color: #ffffff;
+    }
+
+    @media (max-width: 1200px) {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
     }
 
 `

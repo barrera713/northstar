@@ -13,4 +13,13 @@ export const StyledJobCollection = styled.div`
     .content-main-container {
         max-width: 1200px;
     }
+
+
+    @media (max-width: 1200px) {
+       padding: 0;
+
+       .content-main-container {
+            
+        }
+    }
 `

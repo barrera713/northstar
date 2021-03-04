@@ -2,14 +2,12 @@ import styled from 'styled-components';
 
 
 export const StyledLeftView = styled.div`
-    height: 100vh;
     text-align: left;
     padding-left: 50px;
-    background-color: #212121;
+    margin-top: 80px;
 
     .title {
-        padding-top: 80px;
-        padding-bottom: 40px;
+       
     }
 
     .saved-jobs-container {

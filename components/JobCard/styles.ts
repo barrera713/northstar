@@ -2,14 +2,10 @@ import styled from 'styled-components';
 
 
 export const JobCardStyles = styled.div`
-
     .card-container {
-        max-width: 300px;
-        height: 250px;
+        width: 300px;
         border-radius: 10px;
-        margin: 7px 0;
         background: #4B4B4B;
-     
         border: none;
     }
 

@@ -3,11 +3,13 @@ import styled from 'styled-components';
 export const StyledJobCollection = styled.div`
     background-color: #212121;
     height: 100vh;
-    padding-left: 100px;
+    padding: 0 150px;
     overflow-y: scroll;
 
     .title {
-        padding-top: 80px;
-        padding-bottom: 40px;
+    }
+
+    .content-main-container {
+        max-width: 950px;
     }
 `

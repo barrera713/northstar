@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 
 export const StyledHomeContainer = styled.div`
+    background-color: #212121;
+
+
     .main-container {
         display: flex;
         justify-content: space-between;

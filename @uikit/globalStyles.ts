@@ -6,10 +6,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     color: #ffffff;
   }
-
-  body {
-    background-color: #212121;
-  }
+  
 `;
  
 export default GlobalStyle;

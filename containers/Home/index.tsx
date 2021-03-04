@@ -1,5 +1,6 @@
 import React from 'react';
-import { LeftView } from '@uikit/layouts/LeftView';
+import { LeftView } from '@uikit/sections/LeftView';
+import { JobCollection } from '@uikit/sections/JobCollection';
 import { Layout } from 'antd';
 import { StyledHomeContainer } from './styles';
 const { Content } = Layout;
@@ -21,7 +22,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = ({}) => {
         </div>
         <div className='main-content'>
         <Content>
-          Content
+          <JobCollection />
         </Content>
         </div>
       </div>

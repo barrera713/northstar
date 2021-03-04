@@ -4,6 +4,6 @@ export const FilterStyles = styled.div`
     margin-top: 80px;
        
     .main-container {
-        margin-bottom: 30px;
+        margin-bottom: 35px;
     }
 `

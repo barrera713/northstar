@@ -7,13 +7,14 @@ export const StyledLeftView = styled.div`
     margin-top: 80px;
 
     .title {
-       
+        margin-bottom: 35px;
     }
 
     .saved-jobs-container {
         display: flex;
         text-align: left;
-        padding-bottom: 60px;
+        margin-bottom: 70px;
+
 
         a {
             margin-left: 7px;

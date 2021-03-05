@@ -13,7 +13,7 @@ export const JobCollection: React.FC<JobCollectionProps> = ({}) => {
     return (
         <StyledJobCollection>
             <div className='content-main-container'>
-            <Row gutter={[{md: 24, xl: 24}, {md: 0, xl: 0}]}>
+            <Row gutter={[{md: 18, xl: 24}, {md: 18, xl: 24}]}>
             <Col span={8}>
                 <JobCard />
             </Col>

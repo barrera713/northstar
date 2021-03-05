@@ -10,7 +10,6 @@ export const StyledJobCollection = styled.div`
 
     .content-main-container {
         height: 100vh;
-        overflow: scroll;
     }
 
 

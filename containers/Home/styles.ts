@@ -8,16 +8,17 @@ export const StyledHomeContainer = styled.div`
         display: flex;
         justify-content: space-between;
     }
-
+    
     .left-view {
         flex: 1;
     }
-
+    
     .main-content {
-        flex: 4;
+        flex: 3;
         height: 100vh;
-        margin-left: 5%;
         overflow-y: scroll;
+        padding-left: 2%;
+        padding: 0 10px;
     }
 
     @media (max-width: 1200px) {
@@ -26,7 +27,6 @@ export const StyledHomeContainer = styled.div`
         .main-container {
             flex-direction: column;
             max-width: 1000px;
-            margin: 0 auto;
         }
     }
 `

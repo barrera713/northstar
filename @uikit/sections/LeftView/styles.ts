@@ -69,6 +69,10 @@ export const StyledLeftView = styled.div`
         display: flex;
         flex-direction: row;
         padding: 0;
+
+        .title {
+            margin-left: 1%;
+        }
     }
 
 `

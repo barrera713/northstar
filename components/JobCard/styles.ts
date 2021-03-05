@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 
 export const JobCardStyles = styled.div`
+
     .card-container {
         border-radius: 10px;
         background: #4B4B4B;

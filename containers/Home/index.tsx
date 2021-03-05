@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { LeftView } from '@uikit/sections/LeftView';
 import { JobCollection } from '@uikit/sections/JobCollection';
 import { Layout } from 'antd';
@@ -10,25 +10,47 @@ const { Content } = Layout;
 
 
 
-interface HomeContainerProps {}
+interface HomeContainerProps {
+}
 
 
-export const HomeContainer: React.FC<HomeContainerProps> = ({}) => { 
-    return (
-    <Layout>
-      <StyledHomeContainer>
-      <div className='main-container'>
-        <div className='left-view'>
-          <LeftView />
-        </div>
-        <div className='main-content'>
-        <Content>
-          <Filter />
-          <JobCollection />
-        </Content>
-        </div>
+export const HomeContainer: React.FC<HomeContainerProps> = () => { 
+
+  const [hideScroll, setHideScroll] = useState(false);
+
+  // useEffect(() => { 
+  //     const jobContainer = document.getElementById('test');
+  //     jobContainer.addEventListener('scroll', () => {
+  //       console.log(jobContainer.scrollTop)
+
+  //       if(jobContainer.scrollTop > 80 && window.innerWidth >= 1200) {
+  //         // alert('desktop')
+  //         setHideScroll(true)
+  //       } else if(window.innerWidth < 1200 && jobContainer.scrollTop > 10) { // scrollY = 49
+  //         // window.alert('smaller screen')
+  //         setHideScroll(true)
+  //       } else {
+  //         setHideScroll(false)
+  //       }
+  //   });
+  // }, []);
+
+
+  return (
+  <Layout>
+    <StyledHomeContainer>
+    <div className='main-container'>
+      <div className='left-view'>
+        <LeftView />
       </div>
-      </StyledHomeContainer>
+      <div className='main-content' id='test'>
+      <Content>
+          <Filter />
+        <JobCollection setView={hideScroll} />
+      </Content>
+      </div>
+    </div>
+    </StyledHomeContainer>
   </Layout>
   )
 }

@@ -22,11 +22,10 @@ export const StyledHomeContainer = styled.div`
     }
 
     @media (max-width: 1200px) {
-        padding: 0 80px;
+        padding: 0 70px;
         
         .main-container {
             flex-direction: column;
-            max-width: 1000px;
         }
     }
 `

@@ -14,7 +14,7 @@ export const LeftView: React.FC<LeftViewProps> = ({}) => {
     const [isDesktop, setDesktop] = useState(Boolean);
 
     const updateMedia = () => {
-      setDesktop(window.innerWidth < 1200);
+      setDesktop(window.innerWidth <= 1200);
     };
 
     useEffect(() => {

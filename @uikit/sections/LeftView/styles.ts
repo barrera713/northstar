@@ -8,7 +8,7 @@ interface Props {
 
 export const StyledLeftView = styled.div`
     text-align: left;
-    padding-left: 50px;
+    padding: 0 5%;
     margin-top: 80px;
 
     .title {

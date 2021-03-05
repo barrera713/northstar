@@ -11,7 +11,7 @@ import {
 interface LeftViewProps {}
 export const LeftView: React.FC<LeftViewProps> = ({}) => { 
     const [radio, setRadio] = useState(false)
-    const [isDesktop, setDesktop] = useState(window.innerWidth > 1450);
+    const [isDesktop, setDesktop] = useState(Boolean);
 
     const updateMedia = () => {
       setDesktop(window.innerWidth < 1200);

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export const JobCardStyles = styled.div`
     .card-container {
-        width: 300px;
         border-radius: 10px;
         background: #4B4B4B;
         border: none;

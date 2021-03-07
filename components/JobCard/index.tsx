@@ -26,7 +26,7 @@ export const JobCard: React.FC<JobCardProps> = ({}) => {
                 </div>
                 <div className='card-footer'>
                     <Button type='primary' shape='round'>
-                        Apply now
+                        Apply
                     </Button>
                     <Button 
                     shape='round'

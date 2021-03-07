@@ -7,6 +7,7 @@ export const StyledHomeContainer = styled.div`
     .main-container {
         display: flex;
         justify-content: space-between;
+        height: 100vh;
     }
     
     .left-view {
@@ -15,10 +16,7 @@ export const StyledHomeContainer = styled.div`
     
     .main-content {
         flex: 3;
-        height: 100vh;
-        overflow-y: scroll;
-        padding-left: 2%;
-        padding: 0 10px;
+        padding-left: 0;
     }
 
     @media (max-width: 1200px) {
@@ -26,6 +24,7 @@ export const StyledHomeContainer = styled.div`
         
         .main-container {
             flex-direction: column;
+            height: 100vh;
         }
     }
 `

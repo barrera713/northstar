@@ -16,9 +16,9 @@ export const StyledHomeContainer = styled.div`
     
     .main-content {
         flex: 3;
-        padding-left: 0;
     }
 
+    
     @media (max-width: 1200px) {
         padding: 0 70px;
         

@@ -46,7 +46,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = () => {
       <div className='main-content' id='test'>
       <Content>
           <Filter />
-        <JobCollection setView={hideScroll} />
+          <JobCollection setView={hideScroll} />
       </Content>
       </div>
     </div>

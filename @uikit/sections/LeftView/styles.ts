@@ -69,7 +69,7 @@ export const StyledLeftView = styled.div`
         display: flex;
         flex-direction: row;
         padding: 0;
-        margin-top: 3em;
+        margin-top: 1em;
 
         .title {
             margin-left: 1%;

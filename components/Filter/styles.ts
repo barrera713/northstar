@@ -26,7 +26,7 @@ export const FilterStyles = styled.div`
         margin-top: 0;
 
         .main-container {
-            margin-top: 8em;
+            margin-top: 7em;
         }
     }
 `

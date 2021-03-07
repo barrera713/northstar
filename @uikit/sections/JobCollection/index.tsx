@@ -18,7 +18,7 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
             <div 
             className='content-main-container'
             >
-            <Row gutter={[{md: 18, xl: 24}, {md: 18, xl: 24}]} 
+            <Row gutter={[{md: 24, xl: 24}, {md: 0, xl: 24}]} 
             >
             <Col span={8}>
                 <JobCard />

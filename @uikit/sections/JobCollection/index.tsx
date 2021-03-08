@@ -18,51 +18,51 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
             <div 
             className='content-main-container'
             >
-            <Row gutter={[12, {md: 4, xl: 10}]} 
+            <Row gutter={[{ sm: 8, md: 10, lg: 12, xl: 12 }, { md: 2, lg: 4, xl: 10 }]} 
             >
-            <Col span={8}>
+            <Col span={8} md={8} sm={12} xs={24}>
                 <JobCard />
             </Col>
-            <Col span={8}>
+            <Col span={8} md={8} sm={12} xs={24}>
                 <JobCard />
             </Col>
-            <Col span={8}>
+            <Col span={8} md={8} sm={12} xs={24}>
                 <JobCard />
             </Col>
-            <Col span={8}>
+            <Col span={8} md={8} sm={12} xs={24}>
                 <JobCard />
             </Col>
-            <Col span={8}>
+            <Col span={8} md={8} sm={12} xs={24}>
                 <JobCard />
             </Col> 
-            <Col span={8}>
+            <Col span={8} md={8} sm={12} xs={24}>
                 <JobCard />
             </Col>
-            <Col span={8}>
+            <Col span={8} md={8} sm={12} xs={24}>
                 <JobCard />
             </Col>
-            <Col span={8}>
+            <Col span={8} md={8} sm={12} xs={24}>
                 <JobCard />
             </Col>
-            <Col span={8}>
+            <Col span={8} md={8} sm={12} xs={24}>
                 <JobCard />
             </Col>
-            <Col span={8}>
+            <Col span={8} md={8} sm={12} xs={24}>
                 <JobCard />
             </Col>
-            <Col span={8}>
+            <Col span={8} md={8} sm={12} xs={24}>
                 <JobCard />
             </Col>
-            <Col span={8}>
+            <Col span={8} md={8} sm={12} xs={24}>
                 <JobCard />
             </Col>
-            <Col span={8}>
+            <Col span={8} md={8} sm={12} xs={24}>
                 <JobCard />
             </Col>
-            <Col span={8}>
+            <Col span={8} md={8} sm={12} xs={24}>
                 <JobCard />
             </Col>
-            <Col span={8}>
+            <Col span={8} md={8} sm={12} xs={24}>
                 <JobCard />
             </Col>
             </Row>

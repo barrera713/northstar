@@ -25,11 +25,14 @@ export const FilterStyles = styled.div`
     @media (max-width: 1200px) {
         margin-top: 0;
 
-
         .main-container {
             margin-top: 1em;
             margin-bottom: 1em;
             position: relative;
         }
+    }
+
+    @media (max-width: 576px) {
+        
     }
 `

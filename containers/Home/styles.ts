@@ -30,6 +30,40 @@ export const StyledHomeContainer = styled.div`
         .main-content {
             flex: 3;
         }
-    
+    }
+
+    @media (max-width: 576px) {
+        padding: 0 1em;
+    }
+
+    @media only screen 
+    and (min-device-width: 375px) 
+    and (min-device-height: 812px) 
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: portrait) { 
+        .main-content {
+            margin-top: -12em;
+        }
+    }
+
+    @media only screen 
+    and (min-device-width: 414px) 
+    and (min-device-height: 736px) 
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: portrait) { 
+        .main-content {
+            margin-top: -10em;
+        }
+    }
+
+
+    @media only screen 
+    and (min-device-width: 768px) 
+    and (min-device-height: 1024px) 
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: portrait) { 
+        .main-content {
+            margin-top: -10%;
+        }
     }
 `

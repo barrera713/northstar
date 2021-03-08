@@ -6,9 +6,9 @@ export const FilterStyles = styled.div`
 
     .main-container {
         max-width: 1000px;
+        width: 100%;
         position: fixed;
         top: 0;
-        width: 100%;
         height: 3.5rem;
         margin-top: 70px;
         background-color: rgba(196, 196, 196, 0.1);
@@ -25,8 +25,11 @@ export const FilterStyles = styled.div`
     @media (max-width: 1200px) {
         margin-top: 0;
 
+
         .main-container {
-            margin-top: 7em;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            position: relative;
         }
     }
 `

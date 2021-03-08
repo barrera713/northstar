@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const StyledHomeContainer = styled.div`
     background-color: #212121;
+    padding: 0 50px;
     
     .main-container {
         display: flex;
@@ -20,11 +21,15 @@ export const StyledHomeContainer = styled.div`
 
     
     @media (max-width: 1200px) {
-        padding: 0 70px;
-        
+ 
         .main-container {
             flex-direction: column;
             height: 100vh;
         }
+
+        .main-content {
+            flex: 3;
+        }
+    
     }
 `

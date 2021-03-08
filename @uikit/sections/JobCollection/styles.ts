@@ -13,13 +13,11 @@ export const StyledJobCollection = styled.div`
     .content-main-container {  
         max-height: 600px;
         overflow: scroll;
-        background: red;
         padding: .5em;
     }
 
 
     @media (max-width: 1200px) {
        padding: 1em;
-
     }
 `

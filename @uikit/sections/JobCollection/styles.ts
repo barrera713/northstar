@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const StyledJobCollection = styled.div`
-    background-color: red;
+    background-color: #616161;
     max-width: 1000px;
-    padding: 1.5em;
+    padding: 1%;
     border-radius: 10px;
     
     .title {
@@ -18,6 +18,6 @@ export const StyledJobCollection = styled.div`
 
 
     @media (max-width: 1200px) {
-       padding: 1em;
+      
     }
 `

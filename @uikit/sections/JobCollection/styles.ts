@@ -14,6 +14,12 @@ export const StyledJobCollection = styled.div`
         max-height: 600px;
         overflow: scroll;
         padding: .5em;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none; 
+    }
+
+    .content-main-container::-webkit-scrollbar {
+        display: none;
     }
 
 

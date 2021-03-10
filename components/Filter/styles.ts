@@ -31,8 +31,10 @@ export const FilterStyles = styled.div`
             position: relative;
         }
     }
-
-    @media (max-width: 576px) {
-        
-    }
+    @media (max-height: 700px) {
+    .main-container {
+        position: relative;
+        margin-top: -70px;
+        margin-bottom: 1em;
+    } 
 `

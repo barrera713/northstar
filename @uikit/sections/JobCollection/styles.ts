@@ -25,8 +25,6 @@ export const StyledJobCollection = styled.div`
 
     @media (max-width: 576px) {
 
-       
-
         .content-main-container {  
             max-height: 500px;
             overflow: scroll;

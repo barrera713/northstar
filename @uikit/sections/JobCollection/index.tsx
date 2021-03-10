@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { JobCard } from 'components/JobCard';
 import { StyledJobCollection } from './styles';
 import { Col, Row } from 'antd';
-
+import { JobInfo } from '../JobInfo';
 
 
 interface JobCollectionProps {
-    setView: boolean;
+    
 }
 
 export const JobCollection: React.FC<JobCollectionProps> = (props) => { 
 
     console.log('PROPS', props)
+    const [show, setShow] = useState(false);
 
     return (
+        <>
         <StyledJobCollection>
             <div 
             className='content-main-container'
@@ -68,5 +70,7 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
             </Row>
             </div>
         </StyledJobCollection>
+        <JobInfo show={show} /> 
+        </>
     );
 };

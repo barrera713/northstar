@@ -41,12 +41,12 @@ export const HomeContainer: React.FC<HomeContainerProps> = () => {
     <StyledHomeContainer>
     <div className='main-container'>
       <div className='left-view'>
-        <LeftView />
+      <LeftView />
       </div>
       <div className='main-content' id='test'>
       <Content>
           <Filter />
-          <JobCollection setView={hideScroll} />
+          <JobCollection  /> 
       </Content>
       </div>
     </div>

@@ -14,6 +14,9 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
     console.log('PROPS', props)
     const [show, setShow] = useState(false);
 
+    // create flex wrap container
+    // flex job info
+    // create state for display
     return (
         <>
         <StyledJobCollection>

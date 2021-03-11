@@ -7,10 +7,10 @@ interface StyleProps  {
 export const JobInfoStyles = styled.div`
   background-color: #212121;  
   height: 100vh;
-  width: 0;
+  width: 0px;
   
   .main-container {
     background-color: red;
-    width: 0px;
+    width: 500px;
   }
 `

@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
-export const StyledJobCollection = styled.div`
-    background-color: #616161;
-    max-width: 1000px;
-    padding: 1%;
+// when info card is rendered max-width becomes 400px (1000px is default)
+
+interface StyleProps  {
+    show: boolean;
+}
+
+export const StyledJobCollection = styled.div<StyleProps>`
+    background-color: ${(props: StyleProps) => props.show ? 'inherit' : '#616161'};
+    max-width: ${(props: StyleProps) => props.show ? '395px' : '1000px'};
+    padding: .5em;
     border-radius: 10px;
-    display: flex;
     overlfow: hidden;
     
     .title {
@@ -13,19 +18,15 @@ export const StyledJobCollection = styled.div`
     }
     
     .job-collection-container {  
-        max-height: 600px;
-        overflow: scroll;
+        max-height: 620px;
         padding: .5em;
+        overflow: scroll;
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none; 
     }
 
     .job-collection-container::-webkit-scrollbar {
         display: none;
-    }
-
-    .job-info-container {
-
     }
 
 
@@ -75,4 +76,9 @@ export const StyledJobCollection = styled.div`
             max-height: 575px;
         }
     }
+`
+
+export const DesktopContainer = styled.div`
+    display: flex;
+    justify-content: space-evenly;
 `

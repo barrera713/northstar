@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { JobCard } from 'components/JobCard';
-import { StyledJobCollection } from './styles';
+import { StyledJobCollection, DesktopContainer } from './styles';
 import { Col, Row } from 'antd';
-import { JobInfo } from '../JobInfo';
+import { JobInfo } from '../../../components/JobInfo';
 
 
 interface JobCollectionProps {
@@ -21,66 +21,66 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
     // flex job info
     // create state for display
     return (
-        <>
-        <StyledJobCollection>
+        <DesktopContainer>
+        <StyledJobCollection show={show}>
             <div 
             className='job-collection-container'
             >
-            <Row gutter={[{ sm: 8, md: 10, lg: 12, xl: 12 }, { md: 2, lg: 4, xl: 10 }]} 
+            <Row 
+            gutter={[{ sm: 8, md: 10, lg: 12, xl: 12 }, { md: 2, lg: 4, xl: 10 }]}  
             >
-            <Col span={8} md={8} sm={12} xs={24} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
                 <JobCard />
             </Col>
-            <Col span={8} md={8} sm={12} xs={24} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
                 <JobCard />
             </Col>
-            <Col span={8} md={8} sm={12} xs={24} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
                 <JobCard />
             </Col>
-            <Col span={8} md={8} sm={12} xs={24} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
                 <JobCard />
             </Col>
-            <Col span={8} md={8} sm={12} xs={24} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
                 <JobCard />
             </Col> 
-            <Col span={8} md={8} sm={12} xs={24} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
                 <JobCard />
             </Col>
-            <Col span={8} md={8} sm={12} xs={24} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
                 <JobCard />
             </Col>
-            <Col span={8} md={8} sm={12} xs={24} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
                 <JobCard />
             </Col>
-            <Col span={8} md={8} sm={12} xs={24} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
                 <JobCard />
             </Col>
-            <Col span={8} md={8} sm={12} xs={24} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
                 <JobCard />
             </Col>
-            <Col span={8} md={8} sm={12} xs={24} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
                 <JobCard />
             </Col>
-            <Col span={8} md={8} sm={12} xs={24} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
                 <JobCard />
             </Col>
-            <Col span={8} md={8} sm={12} xs={24} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
                 <JobCard />
             </Col>
-            <Col span={8} md={8} sm={12} xs={24} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
                 <JobCard />
             </Col>
-            <Col span={8} md={8} sm={12} xs={24} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
                 <JobCard />
             </Col>
             </Row>
             </div>
         <div
-        hidden={show} 
         className='job-info-container'>
-            <JobInfo show={show} close={handleClose}/> 
         </div>
         </StyledJobCollection>
-        </>
+        { show ? <JobInfo show={show} close={handleClose}/> : null}
+        </DesktopContainer>
     );
 };

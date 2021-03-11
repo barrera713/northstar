@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 // when info card is rendered max-width becomes 400px (1000px is default)
 
-interface StyleProps  {
+interface StyleJobCollectionProps  {
     show: boolean;
 }
 
-export const StyledJobCollection = styled.div<StyleProps>`
-    background-color: ${(props: StyleProps) => props.show ? 'inherit' : '#616161'};
-    max-width: ${(props: StyleProps) => props.show ? '395px' : '1000px'};
+export const StyledJobCollection = styled.div<StyleJobCollectionProps>`
+    background-color: ${(props: StyleJobCollectionProps) => props.show ? 'inherit' : '#616161'};
+    max-width: ${(props: StyleJobCollectionProps) => props.show ? '395px' : '1000px'};
     padding: .5em;
     border-radius: 10px;
     overlfow: hidden;
@@ -78,7 +78,11 @@ export const StyledJobCollection = styled.div<StyleProps>`
     }
 `
 
-export const DesktopContainer = styled.div`
+interface DesktopProps {
+    
+} 
+
+export const DesktopContainer = styled.div<DesktopProps>`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 `

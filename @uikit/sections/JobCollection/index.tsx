@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { JobCard } from 'components/JobCard';
 import { StyledJobCollection, DesktopContainer } from './styles';
-import { Col, Row } from 'antd';
-import { JobInfo } from '../../../components/JobInfo';
+import { Col, Row, Modal } from 'antd';
+import { JobInfo } from '../../../components/JobInfoDesktop';
+import JobInfoModal from 'components/JobInfoModal';
 
 
 interface JobCollectionProps {
@@ -11,15 +12,49 @@ interface JobCollectionProps {
 
 export const JobCollection: React.FC<JobCollectionProps> = (props) => { 
 
+    let initialSize: boolean;
+    const [isDesktop, setDesktop] = useState(initialSize);
     const [show, setShow] = useState(false);
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+
+    const updateMedia = () => {
+    //   setDesktop(window.innerWidth >= 1200);
+        initialSize = window.innerWidth >= 1200;
+        setDesktop(initialSize)
+    };
+
+    useEffect(() => {
+        window.addEventListener("resize", updateMedia);
+        return () => window.removeEventListener("resize", updateMedia);
+    }, []);
+
+
+    const handleJobInfoView = () => {
+        if(isDesktop) {
+            setShow(!show)
+        } else {
+            showModal();
+        }
+    }
 
     const handleClose = () => {
         setShow(!show)
     };
 
-    // create flex wrap container
-    // flex job info
-    // create state for display
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleOk = () => {
+        setIsModalVisible(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
+   
     return (
         <DesktopContainer>
         <StyledJobCollection show={show}>
@@ -29,49 +64,49 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
             <Row 
             gutter={[{ sm: 8, md: 10, lg: 12, xl: 12 }, { md: 2, lg: 4, xl: 10 }]}  
             >
-            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
                 <JobCard />
             </Col>
-            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
                 <JobCard />
             </Col>
-            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
                 <JobCard />
             </Col>
-            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
                 <JobCard />
             </Col>
-            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
                 <JobCard />
             </Col> 
-            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
                 <JobCard />
             </Col>
-            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
                 <JobCard />
             </Col>
-            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
                 <JobCard />
             </Col>
-            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
                 <JobCard />
             </Col>
-            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
                 <JobCard />
             </Col>
-            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
                 <JobCard />
             </Col>
-            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
                 <JobCard />
             </Col>
-            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
                 <JobCard />
             </Col>
-            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
                 <JobCard />
             </Col>
-            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8} onClick={() => setShow(!show)}>
+            <Col span={8} xs={24} sm={12} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
                 <JobCard />
             </Col>
             </Row>
@@ -81,6 +116,7 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
         </div>
         </StyledJobCollection>
         { show ? <JobInfo show={show} close={handleClose}/> : null}
+        <JobInfoModal onCancel={handleCancel} onOk={handleOk} showModal={showModal} visible={isModalVisible} />
         </DesktopContainer>
     );
 };

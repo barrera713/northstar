@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { JobCard } from 'components/JobCard';
 import { StyledJobCollection, DesktopContainer } from './styles';
 import { Col, Row, Modal } from 'antd';
@@ -6,32 +6,27 @@ import { JobInfo } from '../../../components/JobInfoDesktop';
 import JobInfoModal from 'components/JobInfoModal';
 
 
+
 interface JobCollectionProps {
     
 }
 
 export const JobCollection: React.FC<JobCollectionProps> = (props) => { 
-
-    let initialSize: boolean;
-    const [isDesktop, setDesktop] = useState(initialSize);
+    const [width, setWidth] = React.useState(0);
     const [show, setShow] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
 
-
-    const updateMedia = () => {
-    //   setDesktop(window.innerWidth >= 1200);
-        initialSize = window.innerWidth >= 1200;
-        setDesktop(initialSize)
-    };
-
-    useEffect(() => {
-        window.addEventListener("resize", updateMedia);
-        return () => window.removeEventListener("resize", updateMedia);
-    }, []);
-
+    React.useLayoutEffect(() => {
+        function updateSize() {
+            setWidth(window.innerWidth);
+        };
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => window.removeEventListener('resize', updateSize);
+    }, [])
 
     const handleJobInfoView = () => {
-        if(isDesktop) {
+        if(width >= 1200) {
             setShow(!show)
         } else {
             showModal();

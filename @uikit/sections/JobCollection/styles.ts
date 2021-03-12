@@ -84,5 +84,5 @@ interface DesktopProps {
 
 export const DesktopContainer = styled.div<DesktopProps>`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 `

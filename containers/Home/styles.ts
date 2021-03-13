@@ -17,6 +17,7 @@ export const StyledHomeContainer = styled.div`
     
     .main-content {
         flex: 3;
+        max-width: 1000px;
     }
 
     

@@ -7,7 +7,7 @@ interface JobInfoProps {
     close?: Function;
 }
 
-export const JobInfo: React.FC<JobInfoProps> = (props) => {
+export const JobInfoDesktop: React.FC<JobInfoProps> = (props) => {
 
     return (<JobInfoStyles {...props}>
         <div className="main-container">  

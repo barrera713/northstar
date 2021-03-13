@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-// when info card is rendered max-width becomes 400px (1000px is default)
 
 interface StyleJobCollectionProps  {
     show: boolean;
@@ -8,18 +7,17 @@ interface StyleJobCollectionProps  {
 
 export const StyledJobCollection = styled.div<StyleJobCollectionProps>`
     background-color: ${(props: StyleJobCollectionProps) => props.show ? 'inherit' : '#616161'};
-    max-width: ${(props: StyleJobCollectionProps) => props.show ? '395px' : '1000px'};
-    padding: .5em;
+    max-width: 1000px;
     border-radius: 10px;
     overlfow: hidden;
-    
-    .title {
-        
+    padding: ${(props: StyleJobCollectionProps) => props.show ? '0' : '.5em'};
+
+    .desktop-container {
+        display: ${(props: StyleJobCollectionProps) => props.show ? 'flex' : 'hidden'};
     }
     
     .job-collection-container {  
         max-height: 620px;
-        padding: .5em;
         overflow: scroll;
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none; 
@@ -34,8 +32,7 @@ export const StyledJobCollection = styled.div<StyleJobCollectionProps>`
 
         .job-collection-container {  
             max-height: 500px;
-            overflow: scroll;
-            padding: .75em;
+            overflow: scroll;   
         }
     }
 
@@ -43,7 +40,6 @@ export const StyledJobCollection = styled.div<StyleJobCollectionProps>`
         .job-collection-container {  
             max-height: 500px;
             overflow: scroll;
-            padding: .75em;
         }
     }
 
@@ -76,13 +72,4 @@ export const StyledJobCollection = styled.div<StyleJobCollectionProps>`
             max-height: 575px;
         }
     }
-`
-
-interface DesktopProps {
-    
-} 
-
-export const DesktopContainer = styled.div<DesktopProps>`
-    display: flex;
-    justify-content: space-evenly;
 `

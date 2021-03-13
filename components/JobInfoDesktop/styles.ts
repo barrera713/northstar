@@ -7,6 +7,7 @@ export const JobInfoStyles = styled.div`
     background-color: red;
     border-radius: 10px;
     width: 595px;
-    height: 90%;
+    max-height: 620px;
+    margin-left: 7px;
   }
 `

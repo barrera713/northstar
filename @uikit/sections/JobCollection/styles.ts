@@ -43,13 +43,57 @@ export const StyledJobCollection = styled.div<StyleJobCollectionProps>`
         }
     }
 
+    @media (max-width: 320px) {
+        .job-collection-container {  
+            max-height: 400px;
+        }
+    }
+
+    @media (max-width: 411px) {
+        .job-collection-container {  
+            max-height: 620px;
+        }
+    }
+
+    @media (max-height: 731px) {
+        .job-collection-container {  
+            max-height: 500px;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .job-collection-container {  
+            max-height: 400px;
+        }
+    }
+    
+    @media only screen 
+    and (min-device-width: 360px) 
+    and (min-device-height: 640px) 
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: portrait) { 
+        .job-collection-container {  
+            max-height: 475px;
+        }
+    }
+
+    @media only screen 
+    and (min-device-width: 375px) 
+    and (min-device-height: 667px) 
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: portrait) { 
+        .job-collection-container {  
+            max-height: 500px;
+        }
+    }
+
     @media only screen 
     and (min-device-width: 375px) 
     and (min-device-height: 812px) 
     and (-webkit-device-pixel-ratio: 3)
     and (orientation: portrait) { 
         .job-collection-container {  
-            max-height: 630px;
+            max-height: 625px;
         }
     }
 
@@ -62,6 +106,7 @@ export const StyledJobCollection = styled.div<StyleJobCollectionProps>`
             max-height: 575px;
         }
     }
+
 
     @media only screen 
     and (min-device-width: 768px) 

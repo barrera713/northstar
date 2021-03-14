@@ -31,10 +31,43 @@ export const FilterStyles = styled.div`
             position: relative;
         }
     }
+
+    @media (max-width: 411px) {
+        .main-container {
+            margin-top: -7em;
+        }
+    }
+
     @media (max-height: 700px) {
-    .main-container {
-        position: relative;
-        margin-top: -70px;
-        margin-bottom: 1em;
-    } 
+
+        .main-container {
+            margin-top: 10px;
+        } 
+    }
+
+    @media (max-height: 731px) {
+        .main-container {
+            margin-top: -4em;
+        } 
+    }
+
+    @media only screen 
+    and (min-device-width: 375px) 
+    and (min-device-height: 812px) 
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: portrait) { 
+        .main-container {
+            margin-top: 2em;
+        }
+    }
+
+    @media only screen 
+    and (min-device-width: 414px) 
+    and (min-device-height: 812px) 
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: portrait) { 
+        .main-container {
+            margin-top: 2em;
+        }
+    }
 `

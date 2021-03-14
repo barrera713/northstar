@@ -70,4 +70,10 @@ export const FilterStyles = styled.div`
             margin-top: 2em;
         }
     }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        .main-container {
+            margin-top: -10em;
+        }
+    }
 `

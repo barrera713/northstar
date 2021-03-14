@@ -88,6 +88,16 @@ export const StyledJobCollection = styled.div<StyleJobCollectionProps>`
     }
 
     @media only screen 
+    and (min-device-width: 280px) 
+    and (min-device-height: 653px) 
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: portrait) { 
+        .job-collection-container {  
+            max-height: 500px;
+        }
+    }
+
+    @media only screen 
     and (min-device-width: 375px) 
     and (min-device-height: 812px) 
     and (-webkit-device-pixel-ratio: 3)
@@ -115,6 +125,19 @@ export const StyledJobCollection = styled.div<StyleJobCollectionProps>`
     and (orientation: portrait) { 
         .job-collection-container {  
             max-height: 575px;
+        }
+    }
+
+    
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        .job-collection-container {  
+            max-height: 810px;
+        }
+    }
+
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+        .job-collection-container {  
+            max-height: 1050px;
         }
     }
 `

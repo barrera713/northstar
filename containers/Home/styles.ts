@@ -67,4 +67,9 @@ export const StyledHomeContainer = styled.div`
             margin-top: -10%;
         }
     }
+
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        padding: 0 .5em;
+    }
 `

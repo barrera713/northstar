@@ -1,6 +1,8 @@
 import React from 'react';
 import { Modal } from 'antd';
 import { JobModalStyles } from './styles';
+import { CloseOutlined } from '@ant-design/icons';
+
 
 
 
@@ -18,6 +20,7 @@ const JobInfoModal: React.FC<JobInfoModalProps> = (props) => {
     return (
         <JobModalStyles>
         <Modal
+        closeIcon={<CloseOutlined style={{color: '#ECECED'}} />}
         bodyStyle={{background: '#282828'}}
         width={800}
          visible={props.visible}

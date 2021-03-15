@@ -10,15 +10,29 @@ export const JobInfoStyles = styled.div`
     max-height: 620px;
     margin-left: 7px;
     overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+    padding: 0 7px;
   }
 
-  .info-header, .company-and-location {
+  .main-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .info-header {
     display: flex;
-    margin: 20px 0 10px 20px;
+    margin: 20px 0 15px 20px;
+
+    p {
+      position: relative;
+      left: 21em;
+      top: 13px;
+      font-size: 12px;
+    }
 
     h3 {
       color: #ffffff;
-      margin: 13px 0 0 10px;
+      margin: 13px 0 0 15px;
     }
   
     img {
@@ -27,6 +41,20 @@ export const JobInfoStyles = styled.div`
     }
   }
 
+  .company-name-location, .info-links {
+    display: flex;
+    margin-left: 20px;
+    justify-content: space-between;
+
+    p:nth-child(2) {
+      margin: 0 20px; 
+    }
+  }
+
+  .job-meta {
+    display: flex;
+    justify-content: space-between;
+  }
 
   .overview-container {
     margin-left: 20px;

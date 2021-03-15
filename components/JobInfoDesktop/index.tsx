@@ -15,12 +15,23 @@ export const JobInfoDesktop: React.FC<JobInfoProps> = (props) => {
                 <div className='info-header'>
                 <img src="https://jobs.github.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBazJiIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4befa4f6603e069d3d64380dfbf7b42b2af3e4d4/Round_Logo1%20(1).png" />
                 <h3>Position Name</h3>
+                <p>Posted 12 Days ago</p>
                 </div>
-                <div className='company-and-location'>
-                    <p>Company name</p>
-                    <p>Location</p>
+                <div className='job-meta'>
+                    <div className='company-name-location'>
+                        <p>Company name</p>
+                        <p>Location</p>
+                    </div>
+                    <div className='info-links'>
+                        <p>Save</p>
+                        <p>link</p>
+                    </div>
                 </div>
                 <div className='overview-container'>
+                    <div>
+                        <h3>How to apply</h3>
+                        <p>Please send your cover letter and resume via the link below: <a href="https://shorthand.freshteam.com/jobs/KzNG-kDh-KLX/principal-software-engineer-us-remote?ft_source=Github%20Jobs_4000184310&amp;ft_medium=Job%20Boards_4000125529">https://shorthand.freshteam.com/jobs/KzNG-kDh-KLX/principal-software-engineer-us-remote?ft_source=Github%20Jobs_4000184310&amp;ft_medium=Job%20Boards_4000125529</a></p>
+                    </div>
                     <h1>The Opportunity</h1>
                 <p>Shorthand is a growing company that provides a digital publishing platform to many of the world's best known publishers, brands, not-for-profits, and universities. With customers on every continent (except Antarctica!), there's never been a more exciting time to join Shorthand. Our company has the rare distinction in this era of money-burning startups of being both investor-backed and comfortably profitable. We're a small team of geeks with art and heart, and a high bar for quality.</p>
                 <p>To deliver our magic to customers and their audiences, we build software that is scalable, flexible, reliable and as simple as possible but no simpler.</p>
@@ -138,7 +149,7 @@ export const JobInfoDesktop: React.FC<JobInfoProps> = (props) => {
             </div>
             {/* <Button type='primary'
             onClick={() => props.close()}
-        >Close</Button> */}
+        >Close</Button> */}  
         </div>
     </JobInfoStyles>)
 }

@@ -109,7 +109,6 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
         { show ? <JobInfoDesktop show={show} close={handleClose}/> : null}
         </div>
         <JobInfoModal onCancel={handleCancel} onOk={handleOk} showModal={showModal} visible={isModalVisible} />
-       
         </StyledJobCollection>
     );
 };

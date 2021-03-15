@@ -4,9 +4,15 @@ const GlobalStyle = createGlobalStyle`
   h2 {
     font-size: 24px;
     font-weight: 700;
-    color: #ffffff;
+  }
+
+  h1, h2, h3 {
+    color: #ECECED;
   }
   
+  p {
+    color: #b3b3b3;
+  }
 `;
  
 export default GlobalStyle;

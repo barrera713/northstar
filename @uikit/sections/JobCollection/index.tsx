@@ -4,17 +4,17 @@ import { StyledJobCollection } from './styles';
 import { Col, Row } from 'antd';
 import { JobInfoDesktop } from '../../../components/JobInfoDesktop';
 import JobInfoModal from 'components/JobInfoModal';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
+// interface InitialCollection {
+//     collection: Array<object>
+// }
 
-
-interface JobCollectionProps {
-    
-}
-
-export const JobCollection: React.FC<JobCollectionProps> = (props) => { 
+export function JobCollection() { 
     const [width, setWidth] = React.useState(0);
     const [show, setShow] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
+
 
     React.useLayoutEffect(() => {
         function updateSize() {
@@ -23,7 +23,7 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
         window.addEventListener('resize', updateSize);
         updateSize();
         return () => window.removeEventListener('resize', updateSize);
-    }, [])
+    }, []);
 
     const handleJobInfoView = () => {
         if(width >= 1120) {
@@ -37,7 +37,6 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
         setShow(!show)
     };
 
-
     const showModal = () => {
         setIsModalVisible(true);
     };
@@ -49,7 +48,7 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
     const handleCancel = () => {
         setIsModalVisible(false);
     };
-   
+    
     return (
         <StyledJobCollection show={show}>
             <div className='desktop-container'>
@@ -112,3 +111,4 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
         </StyledJobCollection>
     );
 };
+

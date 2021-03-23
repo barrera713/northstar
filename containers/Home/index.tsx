@@ -11,6 +11,7 @@ const { Content } = Layout;
 
 
 interface HomeContainerProps {
+
 }
 
 
@@ -46,7 +47,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = () => {
       <div className='main-content' id='test'>
       <Content>
           <Filter />
-          <JobCollection  /> 
+          <JobCollection /> 
       </Content>
       </div>
     </div>

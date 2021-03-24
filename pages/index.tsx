@@ -13,7 +13,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({collection}) {
-  console.log('GET STATIC PROPS', collection)
   return (
     <HomeContainer { ...collection } />
   )

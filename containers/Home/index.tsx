@@ -15,7 +15,7 @@ interface HomeContainerProps {
 }
 
 
-export const HomeContainer: React.FC<HomeContainerProps> = () => { 
+export const HomeContainer: React.FC<HomeContainerProps> = (props) => { 
 
   const [hideScroll, setHideScroll] = useState(false);
 
@@ -47,7 +47,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = () => {
       <div className='main-content' id='test'>
       <Content>
           <Filter />
-          <JobCollection /> 
+          <JobCollection {...props} /> 
       </Content>
       </div>
     </div>

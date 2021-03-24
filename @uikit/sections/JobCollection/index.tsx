@@ -6,11 +6,10 @@ import { JobInfoDesktop } from '../../../components/JobInfoDesktop';
 import JobInfoModal from 'components/JobInfoModal';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
-// interface InitialCollection {
-//     collection: Array<object>
-// }
 
-export function JobCollection() { 
+
+export const JobCollection = (props) => { 
+
     const [width, setWidth] = React.useState(0);
     const [show, setShow] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -58,51 +57,11 @@ export function JobCollection() {
             <Row 
             gutter={[{ sm: 8, md: 10, lg: 12, xl: 12 }, { md: 2, lg: 4, xl: 10 }]}  
             >
+            {Object.values(props).map((job: object)=> ( 
             <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
-                <JobCard />
+                <JobCard jobDetails={job} />
             </Col>
-            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
-                <JobCard />
-            </Col>
-            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
-                <JobCard />
-            </Col>
-            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
-                <JobCard />
-            </Col>
-            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
-                <JobCard />
-            </Col> 
-            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
-                <JobCard />
-            </Col>
-            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
-                <JobCard />
-            </Col>
-            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
-                <JobCard />
-            </Col>
-            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
-                <JobCard />
-            </Col>
-            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
-                <JobCard />
-            </Col>
-            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
-                <JobCard />
-            </Col>
-            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
-                <JobCard />
-            </Col>
-            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
-                <JobCard />
-            </Col>
-            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
-                <JobCard />
-            </Col>
-            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
-                <JobCard />
-            </Col>
+            ))}
             </Row>
             </div>
         { show ? <JobInfoDesktop show={show} close={handleClose}/> : null}
@@ -111,4 +70,3 @@ export function JobCollection() {
         </StyledJobCollection>
     );
 };
-

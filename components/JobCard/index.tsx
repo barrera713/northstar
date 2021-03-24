@@ -2,11 +2,27 @@ import React, { useState } from 'react';
 import { JobCardStyles } from './styles';
 import { Card, Avatar, Button } from 'antd';
 import { SaveOutlined } from '@ant-design/icons';
+import { datePosted } from 'utils/tools';
 
-interface JobCardProps {}
+interface JobCardProps {
+    jobDetails: {
+        company?: string,
+        company_logo?: string,
+        company_url?: string,
+        created_at?: string,
+        description?: string,
+        how_to_apply?: string,
+        location?: string,
+        title?: string,
+        type?: string,
+        url?: string
+    };
+}
 
-export const JobCard: React.FC<JobCardProps> = ({}) => { 
+export const JobCard: React.FC<JobCardProps> = (props) => { 
 
+    // console.log('INSIDE CARD:', props)
+    const { company, company_logo, company_url, created_at, description, how_to_apply, location, title, type, url } = props?.jobDetails
     const { Meta } = Card;
 
     return (
@@ -16,13 +32,12 @@ export const JobCard: React.FC<JobCardProps> = ({}) => {
                 className='card-container'
             >
                 <Meta
-                avatar={<Avatar src="https://jobs.github.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBazJiIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4befa4f6603e069d3d64380dfbf7b42b2af3e4d4/Round_Logo1%20(1).png" />}
-                title={<p className='meta-title'>Studio Game Engineer - Asia</p>}
-                description={<p className='meta-description'>Remote/Europe - Full Time</p>}
+                avatar={<Avatar src={company_logo ? company_logo : null } />}
+                title={<p className='meta-title'>{title ? title : 'Title unavailable'}</p>}
+                description={<p className='meta-description'>{location ? location : 'Location unavailable'}</p>}
                 />
-                <div className='card-description'>
-                <p>Here at Playco, we make games that bring the world closer together through play.</p>
-                <p>Our ideal teammates are thoughtful, humble, and passionate professionals who can both zoom into the details and zoom out to embrace the big picture. We are inspired by makers and tinkerers, who are unafraid to experiment with a healthy disregard for constraints. We hope you'll enrich our team with your enthusiasm and passion, both for games and for life.</p>
+                <div className='card-description' dangerouslySetInnerHTML={{__html: description}}>
+                    {description === null ? 'Click on company link for more info' : null}
                 </div>
                 <div className='card-footer'>
                     <Button type='primary' shape='round'>
@@ -34,7 +49,7 @@ export const JobCard: React.FC<JobCardProps> = ({}) => {
                     className='card-save-button'>
                         <SaveOutlined /> Save
                     </Button>
-                    <div className='posted-date'>1d</div>
+                    <div className='posted-date'>{`${datePosted(created_at)} d`}</div>
                 </div>
             </Card>
         </JobCardStyles>

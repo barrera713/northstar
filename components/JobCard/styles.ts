@@ -20,12 +20,15 @@ export const JobCardStyles = styled.div`
 
     .card-description {
         color: #ffffff;
-    }
-
-    .card-description p:nth-child(2) {
-        white-space: nowrap;
+        max-height: 130px;
+        margin-bottom: 10px;
         overflow: hidden;
-        text-overflow: ellipsis;
+
+        p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
 
     .card-footer {

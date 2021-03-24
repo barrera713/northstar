@@ -24,7 +24,10 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
     // console.log('INSIDE CARD:', props)
     const { company, company_logo, company_url, created_at, description, how_to_apply, location, title, type, url } = props?.jobDetails
     const { Meta } = Card;
+    const companyLogo = <img style={{height: '100%', width: '100%', objectFit: 'contain' }} src={company_logo ? company_logo : null} />
+        
 
+    console.log(props.jobDetails)
     return (
         <JobCardStyles>
               <Card
@@ -32,9 +35,11 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
                 className='card-container'
             >
                 <Meta
-                avatar={<Avatar src={company_logo ? company_logo : null } />}
+                avatar={<Avatar src={companyLogo} shape='circle' size='large' />}
                 title={<p className='meta-title'>{title ? title : 'Title unavailable'}</p>}
-                description={<p className='meta-description'>{location ? location : 'Location unavailable'}</p>}
+                description={<p className='meta-description'>
+                    {location ? location : 'Location unavailable'} - {type ? type : null}
+                    </p>}
                 />
                 <div className='card-description' dangerouslySetInnerHTML={{__html: description}}>
                     {description === null ? 'Click on company link for more info' : null}
@@ -53,5 +58,5 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
                 </div>
             </Card>
         </JobCardStyles>
-    )
-}
+    );
+};

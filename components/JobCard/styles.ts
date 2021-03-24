@@ -16,6 +16,9 @@ export const JobCardStyles = styled.div`
     .meta-description {
         margin-top: -20px;
         color: #bfbfbf;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     };
 
     .card-description {

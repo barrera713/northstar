@@ -35,7 +35,7 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
                 className='card-container'
             >
                 <Meta
-                avatar={<Avatar src={companyLogo} shape='circle' size='large' />}
+                avatar={<Avatar src={companyLogo} shape='circle'/>}
                 title={<p className='meta-title'>{title ? title : 'Title unavailable'}</p>}
                 description={<p className='meta-description'>
                     {location ? location : 'Location unavailable'} - {type ? type : null}

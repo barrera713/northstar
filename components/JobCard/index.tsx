@@ -3,6 +3,7 @@ import { JobCardStyles } from './styles';
 import { Card, Avatar, Button } from 'antd';
 import { SaveOutlined } from '@ant-design/icons';
 import { datePosted } from 'utils/tools';
+import Router from "next/router";
 
 interface JobCardProps {
     jobDetails: {
@@ -21,7 +22,7 @@ interface JobCardProps {
 
 export const JobCard: React.FC<JobCardProps> = (props) => { 
 
-    // console.log('INSIDE CARD:', props)
+    console.log('INSIDE CARD:', props)
     const { company, company_logo, company_url, created_at, description, how_to_apply, location, title, type, url } = props?.jobDetails
     const { Meta } = Card;
     const companyLogo = <img style={{height: '100%', width: '100%', objectFit: 'contain' }} src={company_logo ? company_logo : null} />
@@ -45,7 +46,9 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
                     {description === null ? 'Click on company link for more info' : null}
                 </div>
                 <div className='card-footer'>
-                    <Button type='primary' shape='round'>
+                    <Button type='primary' 
+                    onClick={() => window.open(url, '_blank')}
+                    shape='round'>
                         Apply
                     </Button>
                     <Button 

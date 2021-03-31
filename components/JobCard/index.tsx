@@ -3,10 +3,13 @@ import { JobCardStyles } from './styles';
 import { Card, Avatar, Button } from 'antd';
 import { SaveOutlined } from '@ant-design/icons';
 import { datePosted } from 'utils/tools';
-import Router from "next/router";
+import { saveInLocalStorage } from 'utils/hooks';
+
 
 interface JobCardProps {
+    id?: string;
     jobDetails: {
+        id?: string;
         company?: string,
         company_logo?: string,
         company_url?: string,
@@ -22,16 +25,15 @@ interface JobCardProps {
 
 export const JobCard: React.FC<JobCardProps> = (props) => { 
 
-    console.log('INSIDE CARD:', props)
-    const { company, company_logo, company_url, created_at, description, how_to_apply, location, title, type, url } = props?.jobDetails
+  
+    const { company, company_logo, company_url, created_at, description, how_to_apply, location, title, type, url, id } = props?.jobDetails
     const { Meta } = Card;
     const companyLogo = <img style={{height: '100%', width: '100%', objectFit: 'contain' }} src={company_logo ? company_logo : null} />
-        
 
-    console.log(props.jobDetails)
     return (
         <JobCardStyles>
               <Card
+                id={id}
                 hoverable={true}
                 className='card-container'
             >
@@ -54,7 +56,9 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
                     <Button 
                     shape='round'
                     size='middle' 
-                    className='card-save-button'>
+                    className='card-save-button'
+                    onClick={() => saveInLocalStorage(props?.jobDetails)}
+                    >
                         <SaveOutlined /> Save
                     </Button>
                     <div className='posted-date'>{`${datePosted(created_at)} d`}</div>

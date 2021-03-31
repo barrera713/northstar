@@ -46,7 +46,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
       </div>
       <div className='main-content' id='test'>
       <Content>
-          <Filter />
+          <Filter {...props} />
           <JobCollection {...props} /> 
       </Content>
       </div>

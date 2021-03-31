@@ -5,6 +5,18 @@ import { JobInfoStyles } from './styles';
 interface JobInfoProps {
     show?: Boolean;
     close?: Function;
+    // jobDetails: {
+    //     company?: string,
+    //     company_logo?: string,
+    //     company_url?: string,
+    //     created_at?: string,
+    //     description?: string,
+    //     how_to_apply?: string,
+    //     location?: string,
+    //     title?: string,
+    //     type?: string,
+    //     url?: string
+    // };
 }
 
 export const JobInfoDesktop: React.FC<JobInfoProps> = (props) => {

@@ -27,7 +27,6 @@ export const StyledJobCollection = styled.div<StyleJobCollectionProps>`
         display: none;
     }
 
-
     @media (max-width: 576px) {
 
         .job-collection-container {  

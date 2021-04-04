@@ -19,26 +19,32 @@ export const JobInfoStyles = styled.div`
     display: none;
   }
 
-  .info-header {
+  .title-posted-date {
     display: flex;
-    margin: 20px 0 15px 20px;
+    align-items: center;
 
     p {
-      position: relative;
-      left: 21em;
-      top: 13px;
+      margin-left: 13em;
       font-size: 12px;
+      margin-bottom: 3px;
     }
 
     h3 {
-      color: #ffffff;
-      margin: 13px 0 0 15px;
+      padding: 0 20px;
+      margin: 0;
+      color: #ECECED;
     }
-  
+  }
+
+  .info-header {
+    display: flex;
+    margin: 20px 0 15px 20px;
+    
     img {
       width: 60px;
       height: 60px;
     }
+    
   }
 
   .company-name-location, .info-links {
@@ -60,5 +66,9 @@ export const JobInfoStyles = styled.div`
 
   .overview-container {
     margin-left: 20px;
+  }
+
+  .close-icon {
+    margin-top: 7px;
   }
 `

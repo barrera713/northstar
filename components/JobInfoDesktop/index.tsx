@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CloseCircleOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import { JobInfoStyles } from './styles';
 import { datePosted, validCompanyUrl } from 'utils/tools';
@@ -30,8 +31,10 @@ export const JobInfoDesktop: React.FC<JobInfoProps> = (props) => {
             <div>
                 <div className='info-header'>
                 <img src={company_logo} />
+                <div className='title-posted-date'>
                 <h3>{title}</h3>
                 <p>{`Posted ${datePosted(created_at)} days ago`}</p>
+                </div>
                 </div>
                 <div className='job-meta'>
                     <div className='company-name-location'>
@@ -51,9 +54,7 @@ export const JobInfoDesktop: React.FC<JobInfoProps> = (props) => {
                     <div dangerouslySetInnerHTML={{__html: description}}></div>
                 </div>
             </div>
-            <Button type='primary'
-            onClick={() => props.close()}
-        >Close</Button>   
+            <CloseCircleOutlined onClick={() => props.close()} className="close-icon" />
         </div>
     </JobInfoStyles>)
 }

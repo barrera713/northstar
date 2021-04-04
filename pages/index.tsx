@@ -1,4 +1,5 @@
-import { HomeContainer } from '../containers/Home';
+import { HomeContainer } from 'containers/Home';
+import { datePosted } from 'utils/tools';
 
 
 
@@ -13,7 +14,11 @@ export async function getStaticProps() {
 }
 
 export default function Home({collection}) {
+
+  // sorted collection from newest
+  let newest = collection.sort((a, b) => datePosted(a.created_at) - datePosted(b.created_at));
+
   return (
-    <HomeContainer { ...collection } />
+    <HomeContainer { ...newest } />
   );
 };

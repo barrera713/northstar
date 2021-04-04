@@ -26,7 +26,7 @@ export const JobCollection = (props) => {
     const handleJobInfoView = (job: object) => {
         setViewJob(job);    
         if(width >= 1120) {
-            setShow(!show)
+            setShow(true)
         } else {
             showModal();
         }

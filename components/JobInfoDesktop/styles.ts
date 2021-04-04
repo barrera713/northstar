@@ -66,6 +66,7 @@ export const JobInfoStyles = styled.div`
 
   .overview-container {
     margin-left: 20px;
+    padding-bottom: 7px;
   }
 
   .close-icon {

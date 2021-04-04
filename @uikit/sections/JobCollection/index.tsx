@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { JobCard } from 'components/JobCard';
 import { StyledJobCollection } from './styles';
-import { Col, Row } from 'antd';
+import { Col, notification, Row } from 'antd';
 import { JobInfoDesktop } from '../../../components/JobInfoDesktop';
 import JobInfoModal from 'components/JobInfoModal';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
@@ -48,6 +48,14 @@ export const JobCollection = (props) => {
         setIsModalVisible(false);
     };
 
+    const openNotification = ()=> {
+        notification.info({
+          message: `Successfully saved! :)`,
+          description: "Navigate to 'Saved jobs' to view all saved jobs.",
+            placement: 'bottomLeft'
+        });
+    };
+
     console.log('CURRENT STATE => ', viewJob)
     
     return (
@@ -61,7 +69,7 @@ export const JobCollection = (props) => {
             >
             {Object.values(props).map((job: object) => ( 
             <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={() => handleJobInfoView(job)} >
-                <JobCard jobDetails={job} />
+                <JobCard jobDetails={job} saveNotification={openNotification} />
             </Col>
             ))}
             </Row>

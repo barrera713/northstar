@@ -22,14 +22,20 @@ interface JobCardProps {
         type?: string,
         url?: string
     };
+    saveNotification: Function;
 }
 
 export const JobCard: React.FC<JobCardProps> = (props) => { 
 
-  
+    
     const { company, company_logo, company_url, created_at, description, how_to_apply, location, title, type, url, id } = props?.jobDetails
     const { Meta } = Card;
     const companyLogo = <img style={{height: '100%', width: '100%', objectFit: 'contain' }} src={company_logo ? company_logo : null} />
+
+    const handleSaveJob = (job: object) => {
+        saveInLocalStorage(job);
+        props.saveNotification()
+    }
 
     return (
         <JobCardStyles>
@@ -53,8 +59,8 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
                     shape='round'>
                         Explore
                     </Button>
-                        <HeartOutlined 
-                         onClick={() => saveInLocalStorage(props?.jobDetails)}
+                        <HeartOutlined
+                         onClick={() => handleSaveJob(props.jobDetails)}
                          className='card-save-button'
                         />
                     

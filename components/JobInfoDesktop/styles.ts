@@ -45,9 +45,11 @@ export const JobInfoStyles = styled.div`
     display: flex;
     margin-left: 20px;
     justify-content: space-between;
+  }
 
-    p:nth-child(2) {
-      margin: 0 20px; 
+  .info-links {
+    a, p {
+      margin-left: 15px;
     }
   }
 

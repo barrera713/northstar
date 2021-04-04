@@ -12,7 +12,7 @@ export const JobCollection = (props) => {
     const [width, setWidth] = React.useState(0);
     const [show, setShow] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
-
+    const [viewJob, setViewJob] = useState(Object);
 
     React.useLayoutEffect(() => {
         function updateSize() {
@@ -23,7 +23,8 @@ export const JobCollection = (props) => {
         return () => window.removeEventListener('resize', updateSize);
     }, []);
 
-    const handleJobInfoView = () => {
+    const handleJobInfoView = (job: object) => {
+        setViewJob(job);    
         if(width >= 1120) {
             setShow(!show)
         } else {
@@ -46,6 +47,8 @@ export const JobCollection = (props) => {
     const handleCancel = () => {
         setIsModalVisible(false);
     };
+
+    console.log('CURRENT STATE => ', viewJob)
     
     return (
         <StyledJobCollection show={show}>
@@ -57,15 +60,15 @@ export const JobCollection = (props) => {
             gutter={[{ sm: 8, md: 10, lg: 12, xl: 12 }, { md: 2, lg: 4, xl: 10 }]}  
             >
             {Object.values(props).map((job: object) => ( 
-            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={handleJobInfoView}>
+            <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={() => handleJobInfoView(job)} >
                 <JobCard jobDetails={job} />
             </Col>
             ))}
             </Row>
             </div>
-        { show ? <JobInfoDesktop show={show} close={handleClose}/> : null}
+        { show ? <JobInfoDesktop show={show} close={handleClose} jobDetails={viewJob} /> : null}
         </div>
-        <JobInfoModal onCancel={handleCancel} onOk={handleOk} showModal={showModal} visible={isModalVisible} />
+        <JobInfoModal onCancel={handleCancel} onOk={handleOk} showModal={showModal} visible={isModalVisible} jobDetails={viewJob} />
         </StyledJobCollection>
     );
 };

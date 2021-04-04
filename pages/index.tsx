@@ -15,5 +15,5 @@ export async function getStaticProps() {
 export default function Home({collection}) {
   return (
     <HomeContainer { ...collection } />
-  )
-}
+  );
+};

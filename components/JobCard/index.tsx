@@ -49,10 +49,9 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
                     {description === null ? 'Click on company link for more info' : null}
                 </div>
                 <div className='card-footer'>
-                    <Button type='primary' 
-                    onClick={() => window.open(url, '_blank')}
+                    <Button type="primary" 
                     shape='round'>
-                        Apply
+                        Explore
                     </Button>
                         <HeartOutlined 
                          onClick={() => saveInLocalStorage(props?.jobDetails)}

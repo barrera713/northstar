@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { JobCardStyles } from './styles';
 import { Card, Avatar, Button } from 'antd';
-import { SaveOutlined } from '@ant-design/icons';
+import { HeartOutlined } from '@ant-design/icons';
 import { datePosted } from 'utils/tools';
 import { saveInLocalStorage } from 'utils/hooks';
+
 
 
 interface JobCardProps {
@@ -53,14 +54,11 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
                     shape='round'>
                         Apply
                     </Button>
-                    <Button 
-                    shape='round'
-                    size='middle' 
-                    className='card-save-button'
-                    onClick={() => saveInLocalStorage(props?.jobDetails)}
-                    >
-                        <SaveOutlined /> Save
-                    </Button>
+                        <HeartOutlined 
+                         onClick={() => saveInLocalStorage(props?.jobDetails)}
+                         className='card-save-button'
+                        />
+                    
                     <div className='posted-date'>{`${datePosted(created_at)} d`}</div>
                 </div>
             </Card>

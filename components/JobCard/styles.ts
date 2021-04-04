@@ -10,7 +10,7 @@ export const JobCardStyles = styled.div`
     }
 
     .meta-title {
-        color: #ffffff;
+        color: #ECECED;
     }
 
     .meta-description {
@@ -42,7 +42,7 @@ export const JobCardStyles = styled.div`
 
     .card-save-button {
         position: relative;
-        right: 3%;
+        left: 20%;
     }
 
     .posted-date {

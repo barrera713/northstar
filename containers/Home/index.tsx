@@ -40,7 +40,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
   return (
   <Layout>
     <StyledHomeContainer>
-    <div className='main-container'>
+    <main className='main-container'>
       <div className='left-view'>
       <LeftView />
       </div>
@@ -50,7 +50,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
           <JobCollection {...props} /> 
       </Content>
       </div>
-    </div>
+    </main>
     </StyledHomeContainer>
   </Layout>
   )

@@ -69,7 +69,7 @@ export const JobCollection = (props) => {
             >
             {Object.values(props).map((job: object) => ( 
             <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={() => handleJobInfoView(job)} >
-                <JobCard jobDetails={job} saveNotification={openNotification} />
+                <JobCard jobDetails={job}  />
             </Col>
             ))}
             </Row>

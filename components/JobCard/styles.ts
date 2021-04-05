@@ -40,15 +40,6 @@ export const JobCardStyles = styled.div`
         justify-content: space-between;
     }
 
-    .card-save-button {
-        position: relative;
-        left: 22%;
-        &:hover {
-            cursor: pointer;
-            font-size: 16px;
-        }
-    }
-
     .posted-date {
         color: #bfbfbf;
     }

@@ -3,7 +3,8 @@ import { JobCardStyles } from './styles';
 import { Card, Avatar, Button } from 'antd';
 import { HeartOutlined } from '@ant-design/icons';
 import { datePosted } from 'utils/tools';
-import { saveInLocalStorage } from 'utils/hooks';
+import { saveInLocalStorage } from 'utils/saveJob';
+import SaveJob from 'components/SaveJob';
 
 
 
@@ -22,7 +23,7 @@ interface JobCardProps {
         type?: string,
         url?: string
     };
-    saveNotification: Function;
+    // saveNotification: Function;
 }
 
 export const JobCard: React.FC<JobCardProps> = (props) => { 
@@ -32,10 +33,10 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
     const { Meta } = Card;
     const companyLogo = <img style={{height: '100%', width: '100%', objectFit: 'contain' }} src={company_logo ? company_logo : null} />
 
-    const handleSaveJob = (job: object) => {
-        saveInLocalStorage(job);
-        props.saveNotification()
-    }
+    // const handleSaveJob = (job: object) => {
+    //     saveInLocalStorage(job);
+    //     props.saveNotification()
+    // }
 
     return (
         <JobCardStyles>
@@ -59,10 +60,11 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
                     shape='round'>
                         Explore
                     </Button>
-                        <HeartOutlined
+                    <SaveJob  savedJob={props.jobDetails} />
+                        {/* <HeartOutlined
                          onClick={() => handleSaveJob(props.jobDetails)}
                          className='card-save-button'
-                        />
+                        /> */}
                     
                     <div className='posted-date'>{`${datePosted(created_at)} d`}</div>
                 </div>

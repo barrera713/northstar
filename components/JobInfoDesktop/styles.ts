@@ -6,7 +6,7 @@ export const JobInfoStyles = styled.div`
   .main-container {
     background-color: rgba(196, 196, 196, 0.1);
     border-radius: 10px;
-    width: 600px;
+    width: 620px;
     max-height: 620px;
     margin-left: 7px;
     overflow: scroll;
@@ -67,6 +67,13 @@ export const JobInfoStyles = styled.div`
   .overview-container {
     margin-left: 20px;
     padding-bottom: 7px;
+    max-width: 550px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    .api_html_overview {
+      word-wrap: break-word;
+    }
   }
 
   .close-icon {

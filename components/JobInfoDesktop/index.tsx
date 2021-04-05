@@ -25,7 +25,7 @@ export const JobInfoDesktop: React.FC<JobInfoProps> = (props) => {
 
     const { company, company_logo, company_url, created_at, description, how_to_apply, location, title, type, url } = props?.jobDetails
 
-    console.log(validCompanyUrl(company_url))
+    console.log(description)
     return (<JobInfoStyles {...props}>
         <div className="main-container">  
             <div>
@@ -45,12 +45,12 @@ export const JobInfoDesktop: React.FC<JobInfoProps> = (props) => {
                         {validCompanyUrl(company_url) ? <a target='_blank' href={company_url}>Company website</a>: <p>Website unavailable :(</p>}
                     </div>
                 </div>
-                <div className='overview-container'>
-                    <div>
+                <div className='overview-container' >
                         <h3>How to apply</h3>
-                        <div dangerouslySetInnerHTML={{__html: how_to_apply }}>
+                        <div
+                        className="api_html_overview" 
+                        dangerouslySetInnerHTML={{__html: how_to_apply }}>
                         </div>
-                    </div>
                     <div dangerouslySetInnerHTML={{__html: description}}></div>
                 </div>
             </div>

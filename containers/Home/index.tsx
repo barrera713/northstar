@@ -17,7 +17,7 @@ interface HomeContainerProps {
 
 export const HomeContainer: React.FC<HomeContainerProps> = (props) => { 
 
-  const [hideScroll, setHideScroll] = useState(false);
+  // const [hideScroll, setHideScroll] = useState(false);
 
   // useEffect(() => { 
   //     const jobContainer = document.getElementById('test');

@@ -42,7 +42,7 @@ export const JobCardStyles = styled.div`
 
     .card-save-button {
         position: relative;
-        left: 20%;
+        left: 22%;
     }
 
     .posted-date {

@@ -48,7 +48,7 @@ const JobInfoModal: React.FC<JobInfoModalProps> = (props) => {
             <div style={{display: 'flex', justifyContent: 'space-between'}}>
                 <div>
                 <p>{company}</p>
-                <p>{location}</p>
+                <p>Location: {location}</p>
                 <div style={{marginTop: '-5px', marginBottom: '7px'}}>{validCompanyUrl(company_url) ? <a target='_blank' href={company_url}>Company website</a>: <p>Website unavailable :(</p>}</div>
                 </div>
                 <SaveJob savedJob={props.jobDetails} />

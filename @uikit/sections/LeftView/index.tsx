@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyledLeftView } from './styles';
-import { SaveOutlined } from '@ant-design/icons'
+import { HeartOutlined } from '@ant-design/icons'
 import {
     Form,
     Input,
@@ -31,7 +31,7 @@ export const LeftView: React.FC<LeftViewProps> = ({}) => {
         <div 
         hidden={isDesktop}
         className='saved-jobs-container'>
-        <SaveOutlined className='saved-jobs-icon'/>
+        <HeartOutlined className='saved-jobs-icon'/>
         <a>Saved jobs</a>
         </div>
         <Form

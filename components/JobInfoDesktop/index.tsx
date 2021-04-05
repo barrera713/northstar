@@ -3,6 +3,7 @@ import { CloseCircleOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import { JobInfoStyles } from './styles';
 import { datePosted, validCompanyUrl } from 'utils/tools';
+import SaveJob from 'components/SaveJob';
 
 interface JobInfoProps {
     show?: Boolean;
@@ -41,7 +42,7 @@ export const JobInfoDesktop: React.FC<JobInfoProps> = (props) => {
                         <p>{company} - {location}</p>
                     </div>
                     <div className='info-links'>
-                        <p>Save</p>
+                        <SaveJob savedJob={props.jobDetails} />
                         {validCompanyUrl(company_url) ? <a target='_blank' href={company_url}>Company website</a>: <p>Website unavailable :(</p>}
                     </div>
                 </div>

@@ -33,11 +33,6 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
     const { Meta } = Card;
     const companyLogo = <img style={{height: '100%', width: '100%', objectFit: 'contain' }} src={company_logo ? company_logo : null} />
 
-    // const handleSaveJob = (job: object) => {
-    //     saveInLocalStorage(job);
-    //     props.saveNotification()
-    // }
-
     return (
         <JobCardStyles>
               <Card
@@ -60,12 +55,9 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
                     shape='round'>
                         Explore
                     </Button>
-                    <SaveJob  savedJob={props.jobDetails} />
-                        {/* <HeartOutlined
-                         onClick={() => handleSaveJob(props.jobDetails)}
-                         className='card-save-button'
-                        /> */}
-                    
+                    <div className="card-save-button">
+                        <SaveJob savedJob={props.jobDetails} />                    
+                    </div>
                     <div className='posted-date'>{`${datePosted(created_at)} d`}</div>
                 </div>
             </Card>

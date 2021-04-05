@@ -10,13 +10,13 @@ interface SaveJobProps {
 
 const SaveJob: React.FC<SaveJobProps> = (props) => {
 
-    console.log('SAVE JOB', props)
     const handleSaveJob = (job: object) => {
         saveInLocalStorage(job);
         openNotification()
     }
 
-    const openNotification = ()=> {
+    const openNotification = () => {
+        console.log('notification')
         notification.info({
           message: `Successfully saved! :)`,
           description: "Navigate to 'Saved jobs' to view all saved jobs.",

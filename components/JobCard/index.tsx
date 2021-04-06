@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { JobCardStyles } from './styles';
 import { Card, Avatar, Button } from 'antd';
 import { HeartOutlined } from '@ant-design/icons';
-import { datePosted } from 'utils/tools';
+import { numOfDays } from 'utils/tools';
 import { saveInLocalStorage } from 'utils/saveJob';
 import SaveJob from 'components/SaveJob';
 
@@ -58,7 +58,7 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
                     <div className="card-save-button">
                         <SaveJob savedJob={props.jobDetails} />                    
                     </div>
-                    <div className='posted-date'>{`${datePosted(created_at)} d`}</div>
+                    <div className='posted-date'>{`${numOfDays(created_at)} d`}</div>
                 </div>
             </Card>
         </JobCardStyles>

@@ -17,6 +17,7 @@ export default function Home({collection}) {
 
   // sorted collection from newest
   let sortNewest = sortFromNewest(collection);
+  console.log('FINAL', sortNewest)
   return (
     <HomeContainer { ...sortNewest } />
   );

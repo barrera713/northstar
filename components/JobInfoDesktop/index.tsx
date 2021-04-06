@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CloseCircleOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import { JobInfoStyles } from './styles';
-import { datePosted, validCompanyUrl } from 'utils/tools';
+import { numOfDays, validCompanyUrl } from 'utils/tools';
 import SaveJob from 'components/SaveJob';
 
 interface JobInfoProps {
@@ -34,7 +34,7 @@ export const JobInfoDesktop: React.FC<JobInfoProps> = (props) => {
                 <img src={company_logo} />
                 <div className='title-posted-date'>
                 <h3>{title}</h3>
-                <p>{`Posted ${datePosted(created_at)} days ago`}</p>
+                <p>{`Posted ${numOfDays(created_at)} days ago`}</p>
                 </div>
                 </div>
                 <div className='job-meta'>

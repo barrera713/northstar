@@ -1,17 +1,3 @@
-/* format date
-
-*/
-
-export const datePosted = (postedDate: string) => {  
-    let inputDate = new Date(postedDate);
-    let currentDate = new Date();
-    
-
-    let difference = currentDate.setDate(currentDate.getDate() - inputDate.getDate());
-
-    return new Date(difference).getDate();
-};
-
 export const validCompanyUrl = (url: string) => {
     if(!url) return false;
 
@@ -20,11 +6,30 @@ export const validCompanyUrl = (url: string) => {
     return restOfUrl.length > 5 ? true : false;
 }
 
+export const numOfDays = (date: string) => {
+    // @Params string representing date
+    // @Return number of days since job post
+
+    const postDate = new Date(date).getTime();
+    const today = new Date().getTime();
+    const difference = Math.abs(today - postDate);
+
+    // 1000 is 1 second. There are 60 seconds in a minute, 60 minutes in an hour, and 24 hours in a day
+    const day = 1000 * 60 * 60 * 24;
+    return Math.floor(difference / day);
+}
+
+const filterOldPosts = (collection: object[]) => {
+    interface JobProperties {
+      created_at: string;
+    }
+
+    return collection.filter((job: JobProperties) => numOfDays(job.created_at) < 30);
+};
 
 
 export const sortFromNewest = (collection: object[]) => {
 
-    let sortedCollection = collection.sort((a: any, b: any) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
-    console.log('TEST', sortedCollection)
-    return sortedCollection;
+    let removedOldJobs = filterOldPosts(collection);
+    return removedOldJobs.sort((a: any, b: any) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
 }

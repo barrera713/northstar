@@ -26,7 +26,7 @@ export const JobInfoDesktop: React.FC<JobInfoProps> = (props) => {
 
     const { company, company_logo, company_url, created_at, description, how_to_apply, location, title, type, url } = props?.jobDetails
 
-    console.log(description)
+    console.log(created_at)
     return (<JobInfoStyles {...props}>
         <div className="main-container">  
             <div>

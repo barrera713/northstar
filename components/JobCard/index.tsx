@@ -53,7 +53,7 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
                 <div className='card-footer'>
                     <Button type="primary" 
                     shape='round'>
-                        Explore
+                        Details
                     </Button>
                     <div className="card-save-button">
                         <SaveJob savedJob={props.jobDetails} />                    

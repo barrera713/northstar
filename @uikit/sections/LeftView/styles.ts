@@ -33,38 +33,6 @@ export const StyledLeftView = styled.div`
         margin-right: 7px;
     }
 
-    .form-container {
-        background: rgba(196, 196, 196, 0.1);
-        border-radius: 10px;
-        max-width: 284px;
-        max-height: 280px;
-        padding: 18px 0;
-    }
-
-    .form-item {
-        color: #ffffff;
-        margin-left: 20px;
-        margin-top: 18px;
-    }
-
-    .form-input {
-        background: #616161;
-        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
-        outline: none;
-        border: none;
-        color: #ffffff;
-        width: 190px;
-    }
-
-    .radio-submit-container {
-        display: flex;
-    }
-
-    .radio {
-        color: #ffffff;
-    }
-
     @media (max-width: 1200px) {
         display: flex;
         flex-direction: row;

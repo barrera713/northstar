@@ -16,9 +16,8 @@ export async function getStaticProps() {
 export default function Home({collection}) {
 
   // sorted collection from newest
-  let sortNewest = sortFromNewest(collection);
-  console.log('FINAL', sortNewest)
+  let sortByNewest = sortFromNewest(collection);
   return (
-    <HomeContainer { ...sortNewest } />
+    <HomeContainer { ...sortByNewest } />
   );
 };

@@ -10,7 +10,8 @@ interface SaveJobProps {
 
 const SaveJob: React.FC<SaveJobProps> = (props) => {
 
-    const handleSaveJob = (job: object) => {
+    const handleSaveJob = (job: object, e: any) => {
+        e.stopPropagation();
         saveInLocalStorage(job);
         openNotification()
     }
@@ -28,7 +29,7 @@ const SaveJob: React.FC<SaveJobProps> = (props) => {
         <SaveJobStyles>
             <div className="save-job-button">
             <HeartOutlined
-                onClick={() => handleSaveJob(props.savedJob)}
+                onClick={e => handleSaveJob(props.savedJob, e)}
                 className='card-save-button'
             />
             </div>

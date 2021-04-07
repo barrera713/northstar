@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { CloseCircleOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import { JobInfoStyles } from './styles';
@@ -26,10 +26,15 @@ export const JobInfoDesktop: React.FC<JobInfoProps> = (props) => {
 
     const { company, company_logo, company_url, created_at, description, how_to_apply, location, title, type, url } = props?.jobDetails
 
+    useEffect(() => {
+        const subContainer = document.getElementById("sub-container");
+        subContainer.scrollIntoView({ behavior: "smooth"});
+    }, [props.jobDetails])
+
     console.log(created_at)
     return (<JobInfoStyles {...props}>
         <div className="main-container">  
-            <div>
+            <div id="sub-container">
                 <div className='info-header'>
                 <img src={company_logo} />
                 <div className='title-posted-date'>

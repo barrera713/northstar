@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start"
   },
+  "proxy": "https://jobs.github.com",
   "dependencies": {
     "antd": "^4.13.0",
     "next": "10.0.7",

@@ -41,12 +41,11 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
 
 
 
-  // API CALL BUG: is coming from GIT, must set proxy to bypass cors
+  // API CALL BUG: is coming from GIT, must set proxy to bypass
   const handleSearchForm = async () => {
-    // const searchJobs = await fetch("https://api.github.com/repos/vercel/next.js");
-    // const json = await searchJobs.json();
-    // console.log("[RES]", json);
-    
+    const searchJobs = await fetch("https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?search=ruby");
+    const json = await searchJobs.json();
+    console.log("[RES]", json);
   }
 
   return (

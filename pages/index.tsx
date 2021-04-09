@@ -1,22 +1,30 @@
 import { HomeContainer } from 'containers/Home';
-import { sortFromNewest } from 'utils/tools';
+import { sortFromNewest } from "utils/tools";
+import React from "React";
+import useSWR from 'swr';
+/*
+  // use state to store build time data
+  // use useeffect hook to update data when user interacts with form
+*/
 
 
 
 export async function getStaticProps() {
-  const getCollection = await fetch('https://jobs.github.com/positions.json?search=javascript');
-  const collection = await getCollection.json();
+  
+  const initialCollection = await fetch("https://jobs.github.com/positions.json?search=javascript");
+  const collectionJson = await initialCollection.json();
+
   return {
     props: {
-      collection,
+      collectionJson,
     },
   }
 }
 
-export default function Home({collection}) {
+export default function Home({ collectionJson }) {
 
-  // sorted collection from newest
-  let sortByNewest = sortFromNewest(collection);
+  // sorted collectionJson from newest
+  let sortByNewest = sortFromNewest(collectionJson);
   return (
     <HomeContainer { ...sortByNewest } />
   );

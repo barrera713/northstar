@@ -2,14 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { LeftView } from '@uikit/sections/LeftView';
 import { JobCollection } from '@uikit/sections/JobCollection';
 import { Layout } from 'antd';
-import { fetcher } from 'utils/fetchAPI';
 import { StyledHomeContainer } from './styles';
 import { Filter } from 'components/Filter';
-import useSWR from 'swr';
 const { Content } = Layout;
-
-
-
 
 
 interface HomeContainerProps {
@@ -21,6 +16,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
 
 
   // const [hideScroll, setHideScroll] = useState(false);
+  const [ data, setData ] = useState();
 
   // useEffect(() => { 
   //     const jobContainer = document.getElementById('test');
@@ -41,13 +37,20 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
 
 
 
-  // API CALL BUG: is coming from GIT, must set proxy to bypass
   const handleSearchForm = async () => {
     const searchJobs = await fetch("https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?search=ruby");
     const json = await searchJobs.json();
     console.log("[RES]", json);
+    setData(json);
   }
 
+  let collection;
+  if(!data) {
+    collection = props;
+  } else {
+    collection = data;
+  }
+  
   return (
   <Layout>
     <StyledHomeContainer>
@@ -57,8 +60,8 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
       </div>
       <div className='main-content' id='test'>
       <Content>
-          <Filter {...props} />
-          <JobCollection {...props} /> 
+          <Filter {...collection} />
+          <JobCollection {...collection} /> 
       </Content>
       </div>
     </main>

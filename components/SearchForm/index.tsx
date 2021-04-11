@@ -1,4 +1,5 @@
 import { Form, Input, Radio, Button } from 'antd';
+import { RequiredMark } from 'antd/lib/form/Form';
 import radio from 'antd/lib/radio';
 import { OmitProps } from 'antd/lib/transfer/ListBody';
 import React, { useState, useEffect } from 'react';
@@ -15,6 +16,7 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
   const [isDesktop, setDesktop] = useState(Boolean);
   const [form] = Form.useForm();
 
+
   const updateMedia = () => {
     setDesktop(window.innerWidth <= 1200);
   };
@@ -24,8 +26,11 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
     return () => window.removeEventListener("resize", updateMedia);
   });
   
-  const handleSubmit = async () => {
-    handleForm();
+  const onFinish = (e) => {
+    // handleForm();
+    e?.preventDefault?.();
+    e?.preventDefault?.();
+    console.log(e)
   };
 
 
@@ -35,7 +40,7 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
       <FormStyles>
       <Form
       form={form}
-      onFinish={handleSubmit}
+      onFinish={onFinish}
       hidden={isDesktop}
       className='form-container'
       labelCol={{ span: 4 }}
@@ -49,6 +54,7 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
         <Input 
         className='form-input'
         placeholder="Description"
+        name="description"
         size='middle' />
       </Form.Item>
       <Form.Item 
@@ -58,6 +64,7 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
         className='form-input' 
         size='middle'
         placeholder="Location"
+        name="location"
         />
       </Form.Item>
       <div className='radio-submit-container'>      
@@ -66,6 +73,7 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
           >
           <Radio
           className='radio'
+          name="full_time"
           checked={radio}
           onClick={() => setRadio(!radio)}
           >Full time

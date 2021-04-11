@@ -35,13 +35,42 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
   //   });
   // }, []);
 
+  interface FetchParams {
+    description?: string;
+    location?: string;
+    full_time?: boolean;
+  }
 
+  const handleSearchForm = async (params?: FetchParams) => {
 
-  const handleSearchForm = async () => {
-    const searchJobs = await fetch("https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?search=ruby");
-    const json = await searchJobs.json();
-    console.log("[RES]", json);
-    setData(json);
+    let BASE = "https://jobs.github.com/positions.json?";
+    /*
+      base URL = https://jobs.github.com/positions.json?
+      add params to URL
+      i.e => if description "ruby" was submitted, we add "search=ruby" to the base url
+      repeat logic for all other params IF they exist
+    */
+    console.log(params)
+    // const { description, location, full_time } = params;
+
+    // if(description) {
+    //   BASE += `description=${description}`;
+    // };
+
+    // if(full_time) {
+    //   BASE += `&full_time=true`;
+    // };
+
+    // if(location) {
+    //   BASE += `&location=${location}`
+    // }
+
+    
+
+    // const searchJobs = await fetch(`https://cors-anywhere.herokuapp.com/${BASE}`);
+    // const json = await searchJobs.json();
+    // console.log("[RES]", json);
+    // setData(json);
   }
 
   let collection;

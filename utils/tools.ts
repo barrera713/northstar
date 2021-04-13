@@ -38,5 +38,5 @@ export const sortFromNewest = (collection: object[]) => {
 export const alphaCharacters = (str: string) => {
     const regex = new RegExp(/^[a-zA-Z]+$/);
     // console.log('RETURN VALUE', regex.test(str))
-    return regex.test(str.trim());
+    return regex.test(str.trim().toLowerCase());
 }

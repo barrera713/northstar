@@ -50,7 +50,7 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
     const payload = { ...values, fullTime };
     // pass payload to global function
     handleForm(payload);
-
+    form.resetFields();
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -77,7 +77,7 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
         <Input 
         type="text"
         className='form-input'
-        placeholder="Keyword i.e: 'React'"
+        placeholder="Keyword i.e: 'React, python'"
         size='middle' 
       />
       </Form.Item>
@@ -101,7 +101,7 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
           className='form-item'
           >
           <Radio
-          className='radio'
+          className="radio"
           checked={fullTime}
           onClick={() => setFullTime(!fullTime)}
           >Full time

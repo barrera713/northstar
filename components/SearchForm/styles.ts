@@ -32,6 +32,10 @@ export const FormStyles = styled.div`
         width: 16em;
     }
 
+    .form-error {
+        text-align: center;
+    }
+
     .radio-submit-container {
         display: flex;
     }

@@ -12,6 +12,7 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
 
   const [fullTime, setFullTime] = useState(false)
   const [isDesktop, setDesktop] = useState(Boolean);
+  const [formError, setFormError] = useState(String);
   const [form] = Form.useForm();
 
 
@@ -32,10 +33,9 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
     
     if(alphaCharacters(description) === true && alphaCharacters(location) === true) {
       const payload = {...values, fullTime};
-      console.log("Pass", payload)
       // handleForm(payload)
     } else {
-      console.log("Input must be characters a-zA-Z");
+      setFormError("Input must be characters a-zA-Z");
     }
   };
 
@@ -77,6 +77,11 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
         placeholder="City"
         />
       </Form.Item>
+      <div
+      className="form-error"
+      >
+        {formError ? <p>{formError}</p> : null}
+      </div>
       <div className='radio-submit-container'>      
           <Form.Item 
           className='form-item'

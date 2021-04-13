@@ -1,6 +1,7 @@
 import { Form, Input, Radio, Button } from 'antd';
 import React, { useState, useEffect } from 'react';
 import { FormStyles } from './styles';
+import { alphaCharacters }from 'utils/tools';
 
 
 interface FormProps {
@@ -26,9 +27,16 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
 
   const onFinish = (values: any) => {
     event.preventDefault();
-    console.log('Success:', values);
-    const payload = {...values, fullTime};
-    console.log(payload)
+    const { description, location } = values;
+    // validate characters a-z only
+    
+    if(alphaCharacters(description) === true && alphaCharacters(location) === true) {
+      const payload = {...values, fullTime};
+      console.log("Pass", payload)
+      // handleForm(payload)
+    } else {
+      console.log("Input must be characters a-zA-Z");
+    }
   };
 
   const onFinishFailed = (errorInfo: any) => {

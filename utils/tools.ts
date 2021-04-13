@@ -33,3 +33,10 @@ export const sortFromNewest = (collection: object[]) => {
     let removedOldJobs = filterOldPosts(collection);
     return removedOldJobs.sort((a: any, b: any) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
 };
+
+
+export const alphaCharacters = (str: string) => {
+    const regex = new RegExp(/^[a-zA-Z]+$/);
+    console.log('RETURN VALUE', regex.test(str))
+    return regex.test(str);
+}

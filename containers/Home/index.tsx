@@ -41,7 +41,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
     full_time?: boolean;
   }
 
-  const handleSearchForm = async (params?: FetchParams) => {
+  const handleSearchForm = (params?: FetchParams) => {
 
     let BASE = "https://jobs.github.com/positions.json?";
     /*
@@ -50,7 +50,6 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
       i.e => if description "ruby" was submitted, we add "search=ruby" to the base url
       repeat logic for all other params IF they exist
     */
-    console.log(params)
     // const { description, location, full_time } = params;
 
     // if(description) {
@@ -85,7 +84,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
     <StyledHomeContainer>
     <main className='main-container'>
       <div className='left-view'>
-      <LeftView handleForm={handleSearchForm}  />
+      <LeftView handleForm={(payload) => handleSearchForm(payload)}  />
       </div>
       <div className='main-content' id='test'>
       <Content>

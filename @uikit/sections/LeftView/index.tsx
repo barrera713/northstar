@@ -32,7 +32,7 @@ export const LeftView: React.FC<LeftViewProps> = ({handleForm}) => {
       <HeartOutlined className='saved-jobs-icon'/>
       <a>Saved jobs</a>
       </div>
-      <SearchJobForm handleForm={() => handleForm()} />
+      <SearchJobForm handleForm={(payload) => handleForm(payload)} />
     </StyledLeftView>
   )
 }

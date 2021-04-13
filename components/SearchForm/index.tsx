@@ -30,13 +30,27 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
     event.preventDefault();
     const { description, location } = values;
     // validate characters a-z only
-    
-    if(alphaCharacters(description) === true && alphaCharacters(location) === true) {
-      const payload = {...values, fullTime};
-      // handleForm(payload)
-    } else {
-      setFormError("Input must be characters a-zA-Z");
+    let invalidInput: boolean;
+    if(description !== undefined) {
+      if(alphaCharacters(description) === false) {
+        invalidInput = false;
+      }
+    };
+
+    if(location !== undefined) {
+      if(alphaCharacters(location) === false) {
+        invalidInput = false;
+      }
     }
+
+    if(invalidInput === false) {
+      setFormError("Input must be characters a-zA-Z")
+    }
+
+    const payload = { ...values, fullTime };
+    // pass payload to global function
+    handleForm(payload);
+
   };
 
   const onFinishFailed = (errorInfo: any) => {

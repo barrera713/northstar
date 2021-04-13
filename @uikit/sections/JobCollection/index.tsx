@@ -55,8 +55,6 @@ export const JobCollection = (props) => {
             placement: 'bottomLeft'
         });
     };
-
-    console.log('CURRENT STATE => ', viewJob)
     
     return (
         <StyledJobCollection show={show}>

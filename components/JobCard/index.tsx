@@ -23,6 +23,7 @@ interface JobCardProps {
         type?: string,
         url?: string
     };
+    loading: boolean;
     // saveNotification: Function;
 }
 
@@ -38,6 +39,7 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
               <Card
                 id={id}
                 hoverable={true}
+                loading={props.loading}
                 className='card-container'
             >
                 <Meta

@@ -7,8 +7,12 @@ import JobInfoModal from 'components/JobInfoModal';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
 
+interface JobCollectionProps {
+    loading: boolean;
+};
 
-export const JobCollection = (props) => { 
+
+export const JobCollection: React.FC<JobCollectionProps> = (props) => { 
     const [width, setWidth] = React.useState(0);
     const [show, setShow] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -67,7 +71,7 @@ export const JobCollection = (props) => {
             >
             {Object.values(props).map((job: object) => ( 
             <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={() => handleJobInfoView(job)} >
-                <JobCard jobDetails={job}  />
+                <JobCard jobDetails={job} loading={props.loading} />
             </Col>
             ))}
             </Row>

@@ -12,7 +12,7 @@ export const FormStyles = styled.div`
         background: rgba(196, 196, 196, 0.1);
         border-radius: 10px;
         max-width: 285px;
-        height: 24em;
+        height: 18em;
         padding: 1em 0;
     }
 

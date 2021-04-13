@@ -1,7 +1,4 @@
 import { Form, Input, Radio, Button } from 'antd';
-import { RequiredMark } from 'antd/lib/form/Form';
-import radio from 'antd/lib/radio';
-import { OmitProps } from 'antd/lib/transfer/ListBody';
 import React, { useState, useEffect } from 'react';
 import { FormStyles } from './styles';
 
@@ -12,7 +9,7 @@ interface FormProps {
 
 export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
 
-  const [radio, setRadio] = useState(false)
+  const [fullTime, setFullTime] = useState(false)
   const [isDesktop, setDesktop] = useState(Boolean);
   const [form] = Form.useForm();
 
@@ -26,45 +23,50 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
     return () => window.removeEventListener("resize", updateMedia);
   });
   
-  const onFinish = (e) => {
-    // handleForm();
-    e?.preventDefault?.();
-    e?.preventDefault?.();
-    console.log(e)
+
+  const onFinish = (values: any) => {
+    event.preventDefault();
+    console.log('Success:', values);
+    const payload = {...values, fullTime};
+    console.log(payload)
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo);
   };
 
 
-
   return (
-      <>
-      <FormStyles>
+    <>
+    <FormStyles>
       <Form
       form={form}
       onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
       hidden={isDesktop}
       className='form-container'
       labelCol={{ span: 4 }}
       wrapperCol={{ span: 14 }}
       layout="horizontal"
-      size='small'
-    >
+      size='small'>
       <Form.Item 
+      name="description"
       className='form-item'>
-        <p>A keyword such as, “python” or “ruby”</p>
         <Input 
+        type="text"
         className='form-input'
-        placeholder="Description"
-        name="description"
-        size='middle' />
+        placeholder="Keyword i.e: 'React'"
+        size='middle' 
+      />
       </Form.Item>
       <Form.Item 
+      name="location"
       className='form-item'>
-        <p>Optional: A city name or zip code</p>
         <Input 
+        type="text"
         className='form-input' 
         size='middle'
-        placeholder="Location"
-        name="location"
+        placeholder="City"
         />
       </Form.Item>
       <div className='radio-submit-container'>      
@@ -73,9 +75,8 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
           >
           <Radio
           className='radio'
-          name="full_time"
-          checked={radio}
-          onClick={() => setRadio(!radio)}
+          checked={fullTime}
+          onClick={() => setFullTime(!fullTime)}
           >Full time
           </Radio>
           </Form.Item>
@@ -87,9 +88,9 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
           shape="round"
           >Search</Button>
           </Form.Item>
-      </div>
-    </Form>
+        </div>
+      </Form>
     </FormStyles>
-      </>
+    </>
   )
 };

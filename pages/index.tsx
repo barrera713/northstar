@@ -1,7 +1,7 @@
 import { HomeContainer } from 'containers/Home';
 import { sortFromNewest } from "utils/tools";
 import React from "React";
-import useSWR from 'swr';
+
 /*
   // use state to store build time data
   // use useeffect hook to update data when user interacts with form
@@ -11,7 +11,7 @@ import useSWR from 'swr';
 
 export async function getStaticProps() {
   
-  const initialCollection = await fetch("https://jobs.github.com/positions.json?search=javascript");
+  const initialCollection = await fetch("https://jobs.github.com/positions.json?search=node");
   const collectionJson = await initialCollection.json();
 
   return {

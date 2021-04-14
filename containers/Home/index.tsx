@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { LeftView } from '@uikit/sections/LeftView';
 import { JobCollection } from '@uikit/sections/JobCollection';
 import { Layout } from 'antd';
 import { StyledHomeContainer } from './styles';
 import { Filter } from 'components/Filter';
-import { getStaticProps } from 'pages';
+import { sortFromNewest } from 'utils/tools';
 const { Content } = Layout;
 
 
@@ -17,7 +17,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
 
 
   // const [hideScroll, setHideScroll] = useState(false);
-  const [ data, setData ] = useState();
+  const [ data, setData ] = useState(Object);
   const [ loading, setLoading ] = useState(Boolean);
 
  
@@ -60,25 +60,22 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
     }
   }
 
-  let collection;
-  if(data === undefined) {
-    collection = props;
-  } else {
-    collection = data;
-  }
 
-  
+  useEffect(() => {
+    setData(props)
+  }, [data])
+
   return (
   <Layout>
     <StyledHomeContainer>
     <main className='main-container'>
       <div className='left-view'>
-      <LeftView handleForm={(payload) => handleSearchForm(payload)}  />
+      <LeftView handleForm={(payload: object) => handleSearchForm(payload)}  />
       </div>
       <div className='main-content' id='test'>
       <Content>
-          <Filter {...collection} />
-          <JobCollection {...collection} loading={loading} /> 
+          <Filter {...data} />
+          <JobCollection {...data} loading={loading} /> 
       </Content>
       </div>
     </main>

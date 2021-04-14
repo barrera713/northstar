@@ -23,7 +23,6 @@ export async function getStaticProps() {
 
 export default function Home({ collectionJson }) {
 
-  // sorted collectionJson from newest
   let sortByNewest = sortFromNewest(collectionJson);
   return (
     <HomeContainer { ...sortByNewest } />

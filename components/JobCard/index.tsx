@@ -34,8 +34,6 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
     const { Meta } = Card;
     const companyLogo = <img style={{height: '100%', width: '100%', objectFit: 'contain' }} src={company_logo ? company_logo : null} />
 
-    console.log("BRUHHH", props)
-
     return (
         <JobCardStyles>
             {props.jobDetails === false ? null : 

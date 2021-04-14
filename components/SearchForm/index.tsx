@@ -10,20 +10,9 @@ interface FormProps {
 
 export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
 
-  const [fullTime, setFullTime] = useState(false)
-  const [isDesktop, setDesktop] = useState(Boolean);
+  const [fullTime, setFullTime] = useState(false);
   const [formError, setFormError] = useState(String);
   const [form] = Form.useForm();
-
-
-  const updateMedia = () => {
-    setDesktop(window.innerWidth <= 1200);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
-  });
   
 
   const onFinish = (values: any) => {
@@ -65,7 +54,6 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
       form={form}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
-      hidden={isDesktop}
       className='form-container'
       labelCol={{ span: 4 }}
       wrapperCol={{ span: 14 }}

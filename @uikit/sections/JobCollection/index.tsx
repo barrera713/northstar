@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { JobCard } from 'components/JobCard';
 import { StyledJobCollection } from './styles';
-import { Col, notification, Row } from 'antd';
-import { JobInfoDesktop } from '../../../components/JobInfoDesktop';
+import { Col, Row } from 'antd';
+import { JobInfoDesktop } from 'components/JobInfoDesktop';
 import JobInfoModal from 'components/JobInfoModal';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
+
 
 
 interface JobCollectionProps {
@@ -50,14 +50,6 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
 
     const handleCancel = () => {
         setIsModalVisible(false);
-    };
-
-    const openNotification = ()=> {
-        notification.info({
-          message: `Successfully saved! :)`,
-          description: "Navigate to 'Saved jobs' to view all saved jobs.",
-            placement: 'bottomLeft'
-        });
     };
     
     return (

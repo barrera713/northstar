@@ -9,30 +9,38 @@ interface LeftViewProps {
 
 
 export const LeftView: React.FC<LeftViewProps> = ({handleForm}) => { 
-  const [isDesktop, setDesktop] = useState(Boolean);
+  const [width, setWidth] = React.useState(0);
 
-  const updateMedia = () => {
-    setDesktop(window.innerWidth <= 1200);
-  };
+
+  React.useLayoutEffect(() => {
+    function updateSize() {
+        setWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
 
   useEffect(() => {
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
-  });
+    console.log("WINDOW WIDTH:", width)
+  }, [width])
 
   return (
-      <StyledLeftView isDesktop={isDesktop}>
+      <StyledLeftView>
       <h2
       className='title'
       > StriveDash
       </h2>
+      { width >= 1440 ? 
+      <div>
       <div 
-      hidden={isDesktop}
       className='saved-jobs-container'>
       <HeartOutlined className='saved-jobs-icon'/>
       <a>Saved jobs</a>
       </div>
-      <SearchJobForm handleForm={(payload) => handleForm(payload)} />
+      <SearchJobForm handleForm={(payload: object) => handleForm(payload)} />
+      </div>
+      : null }
     </StyledLeftView>
   )
 }

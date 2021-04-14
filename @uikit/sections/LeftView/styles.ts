@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 
 
-interface Props {
-    isDesktop: boolean
-}
-
-
 export const StyledLeftView = styled.div`
     text-align: left;
     padding: 0 5%;

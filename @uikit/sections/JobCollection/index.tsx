@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { JobCard } from 'components/JobCard';
 import { StyledJobCollection } from './styles';
 import { Col, Row } from 'antd';
@@ -29,7 +29,7 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
 
     const handleJobInfoView = (job: object) => {
         setViewJob(job);    
-        if(width >= 1120) {
+        if(width >= 1440) {
             setShow(true)
         } else {
             showModal();
@@ -52,6 +52,10 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
         setIsModalVisible(false);
     };
     
+    useEffect(() => {
+        console.log("WINDOW WIDTH:", width)
+    }, [width])
+
     return (
         <StyledJobCollection show={show}>
             <div className='desktop-container'>

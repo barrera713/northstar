@@ -3,7 +3,7 @@ import { LeftView } from '@uikit/sections/LeftView';
 import { JobCollection } from '@uikit/sections/JobCollection';
 import { Layout } from 'antd';
 import { StyledHomeContainer } from './styles';
-import { Filter } from 'components/Filter';
+import { CollectionBanner } from 'components/CollectionBanner';
 import { sortFromNewest } from 'utils/tools';
 const { Content } = Layout;
 
@@ -54,7 +54,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
     if(searchJobs.status === 200) {
       const json = await searchJobs.json();
       setLoading(false);
-      setData(json);
+      setData(sortFromNewest(json));
     } else {
       // error message
     }
@@ -74,7 +74,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
       </div>
       <div className='main-content' id='test'>
       <Content>
-          <Filter {...data} />
+          <CollectionBanner {...data} />
           <JobCollection {...data} loading={loading} /> 
       </Content>
       </div>

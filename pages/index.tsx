@@ -11,8 +11,9 @@ import React from "React";
 
 export async function getStaticProps() {
   
-  const initialCollection = await fetch("https://jobs.github.com/positions.json?search=node");
-  const collectionJson = await initialCollection.json();
+  // const initialCollection = await fetch("https://jobs.github.com/positions.json?search=node");
+  // const collectionJson = await initialCollection.json();
+  const collectionJson = [] // internet is down 
 
   return {
     props: {

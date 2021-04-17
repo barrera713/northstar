@@ -21,12 +21,12 @@ const SearchFormModal: React.FC<SearchFormModalProps> = (props) => {
 
     return (
         <Modal
-        closeIcon={<CloseOutlined style={{color: '#ECECED'}} />}
-        bodyStyle={{background: '#282828'}}
-        width={800}
-         visible={props.visible}
-         onCancel={props.onCancel}
-         footer={false}
+        style={{ alignContent: "center" }}
+        closeIcon={<CloseOutlined style={{color: "#ECECED" }} />}
+        bodyStyle={{ background: "#282828" }}
+        visible={props.visible}
+        onCancel={props.onCancel}
+        footer={false}
         >
             <SearchJobForm handleForm={props.handleForm} />
         </Modal>

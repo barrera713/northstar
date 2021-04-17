@@ -11,7 +11,7 @@ export const FormStyles = styled.div`
     .form-container {
         background: rgba(196, 196, 196, 0.1);
         border-radius: 10px;
-        max-width: 285px;
+        max-width: 20em;
         height: 18em;
         padding: 1em 0;
     }
@@ -28,7 +28,7 @@ export const FormStyles = styled.div`
         border-radius: 10px;
         outline: none;
         border: none;
-        color: #ffffff;
+        color: #ECECED;
         width: 16em;
     }
 
@@ -42,5 +42,16 @@ export const FormStyles = styled.div`
 
     .radio {
         color: #ffffff;
+    }
+
+    @media (max-width: 1200px) {
+
+        .form-container {
+            margin: 0 auto;
+            border-radius: 10px;
+            width: 900px;
+            height: 18em;
+            padding: 1em 0;
+        }
     }
 `

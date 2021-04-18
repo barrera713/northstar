@@ -10,7 +10,7 @@ export const CollectionBanner: React.FC<BannerProps> = (props) => {
         <FilterStyles>
             <div
             className='main-container' >
-                <h2 className='title'>Showing {Object.keys(props).length}</h2>
+                <h2 className='title'>Showing {Object.keys(props).length} jobs</h2>
             </div>
         </FilterStyles>
     )

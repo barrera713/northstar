@@ -63,7 +63,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
 
   useEffect(() => {
     setData(props)
-  }, [data])
+  }, [])
 
   return (
   <Layout>

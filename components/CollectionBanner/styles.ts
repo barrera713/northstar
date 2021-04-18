@@ -10,14 +10,15 @@ export const FilterStyles = styled.div`
         position: fixed;
         top: 0;
         height: 3.5rem;
-        margin-top: 70px;
+        margin-top: 4em;
         background-color: rgba(196, 196, 196, 0.1);
         border-radius: 10px;
     }
 
     .title {
         margin-left: 2%;
-        margin-top: 1%;
+        margin-top: .75em;
+        align-items: center;
     }
 
 

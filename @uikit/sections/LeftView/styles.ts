@@ -16,17 +16,19 @@ export const StyledLeftView = styled.div`
         text-align: left;
         margin-bottom: 70px;
         align-items: center;
-
+            &:hover {
+                cursor: pointer;
+            }
 
         p {
             margin-left: .5em;
-            color: #ffffff;
+            color: #ECECED;
         }
     }
     
     .saved-jobs-icon {
-        color: #ffffff;
-        margin-right: 1em;
+        color: #ECECED;
+        margin-right: .5em;
     }
 
     @media (max-width: 1200px) {
@@ -36,7 +38,7 @@ export const StyledLeftView = styled.div`
         margin-top: 1em;
 
         p, span {
-            font-size: 18px;
+            font-size: 1.2em;
         }
 
 
@@ -58,7 +60,7 @@ export const StyledLeftView = styled.div`
                 align-items: center;
 
                 span {
-                    margin-left: .5em;
+                    margin-left: .1em;
                 }
             }
 
@@ -73,5 +75,9 @@ export const StyledLeftView = styled.div`
 
     @media (max-width: 576px) {
         width: 100%;
+
+        p, span {
+            font-size: 1em;
+        }
     }
 `

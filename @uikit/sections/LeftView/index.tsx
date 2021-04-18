@@ -3,6 +3,7 @@ import { StyledLeftView } from './styles';
 import { HeartOutlined, SearchOutlined } from '@ant-design/icons'
 import { SearchJobForm } from 'components/SearchJobForm';
 import SearchFormModal from '../SearchFormModal';
+import { Button } from 'antd';
 
 
 
@@ -49,7 +50,7 @@ export const LeftView: React.FC<LeftViewProps> = ({handleForm}) => {
       { width >= 1440 ? 
       <div>
       <div 
-      className='saved-jobs-container'>
+      className="saved-jobs-container">
       <HeartOutlined className='saved-jobs-icon'/>
       <span>Saved jobs</span>
       </div>
@@ -68,7 +69,9 @@ export const LeftView: React.FC<LeftViewProps> = ({handleForm}) => {
          <div 
           className='saved-jobs-container'>
           <HeartOutlined className='saved-jobs-icon'/>
-          <span>Saved jobs</span>
+          <span>
+            Saved jobs
+          </span>
           </div>
       </div>
         }

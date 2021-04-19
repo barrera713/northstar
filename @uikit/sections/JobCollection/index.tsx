@@ -8,7 +8,7 @@ import JobInfoModal from 'components/JobInfoModal';
 
 
 interface JobCollectionProps {
-    loading: boolean;
+    loading?: boolean;
 };
 
 

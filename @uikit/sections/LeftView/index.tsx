@@ -4,6 +4,8 @@ import { HeartOutlined, SearchOutlined } from '@ant-design/icons'
 import { SearchJobForm } from 'components/SearchJobForm';
 import SearchFormModal from '../SearchFormModal';
 import { Button } from 'antd';
+import Link from 'next/link';
+
 
 
 
@@ -52,7 +54,9 @@ export const LeftView: React.FC<LeftViewProps> = ({handleForm}) => {
       <div 
       className="saved-jobs-container">
       <HeartOutlined className='saved-jobs-icon'/>
+      <Link href="saved-jobs">
       <span>Saved jobs</span>
+      </Link>
       </div>
       <SearchJobForm handleForm={(payload: object) => handleForm(payload)} />
       </div>
@@ -69,9 +73,11 @@ export const LeftView: React.FC<LeftViewProps> = ({handleForm}) => {
          <div 
           className='saved-jobs-container'>
           <HeartOutlined className='saved-jobs-icon'/>
+          <Link href="/saved-jobs">
           <span>
             Saved jobs
           </span>
+          </Link>
           </div>
       </div>
         }

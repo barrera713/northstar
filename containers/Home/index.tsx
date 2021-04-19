@@ -72,7 +72,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
       <div className='left-view'>
       <LeftView handleForm={(payload: object) => handleSearchForm(payload)}  />
       </div>
-      <div className='main-content' id='test'>
+      <div className='main-content'>
       <Content>
           <CollectionBanner {...data} />
           <JobCollection {...data} loading={loading} /> 

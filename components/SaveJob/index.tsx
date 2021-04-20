@@ -12,7 +12,7 @@ const SaveJob: React.FC<SaveJobProps> = (props) => {
 
     const handleSaveJob = (job: object, e: any) => {
         e.stopPropagation();
-        console.log(alreadySaved(job))
+
         if(alreadySaved(job)) {
             removeFromLocalStorage(job)
         } else {

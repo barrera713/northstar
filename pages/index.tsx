@@ -11,7 +11,7 @@ import React from "React";
 
 export async function getStaticProps() {
   
-  const initialCollection = await fetch("https://jobs.github.com/positions.json?search=javascript");
+  const initialCollection = await fetch("https://jobs.github.com/positions.json?&full_time=true");
   const collectionJson = await initialCollection.json();
 
   return {

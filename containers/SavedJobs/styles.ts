@@ -4,28 +4,26 @@ import styled from 'styled-components';
 export const SavedJobsStyles = styled.div`
 
     background-color: #212121;
-
     text-align: left;
-    padding: 0 2.5em;
-    margin-top: 5em;
-    
+    padding: 0 50px;
+
     .main-container {
         display: flex;
         justify-content: space-between;
     }
 
     .title__searchLink {
-        margin-bottom: 2em;
-        margin-left: 2.31em;
         text-align: left;
+        margin-top: 5em;
+        margin-left: 1.2em;
     }
 
     .title {
         margin-bottom: 2em;
     }
-    
-    .left-view {
-        flex: 1;
+
+    .collection__banner {
+        margin-top: 5em;
     }
     
     .main-content {
@@ -35,7 +33,6 @@ export const SavedJobsStyles = styled.div`
 
     
     @media (max-width: 1200px) {
-        margin-top: 1em;
         padding: 0 3.5em;
         
         .main-container {
@@ -46,8 +43,7 @@ export const SavedJobsStyles = styled.div`
             display: flex;
             flex-direction: row;
             margin-left: .75em;
-            margin-top: .5em;
-            margin-bottom: 2em;
+            margin-top: 1.5em;
             justify-content: space-between;
 
             p {
@@ -57,12 +53,11 @@ export const SavedJobsStyles = styled.div`
 
         .main-content {
             flex: 3;
-            margin-top: -4.2em;
+            margin-top: -13.7em;
         }
     }
 
     @media (max-width: 576px) {
-
         padding: 0 1em;
 
         .title__searchLink {
@@ -73,7 +68,7 @@ export const SavedJobsStyles = styled.div`
 
         .main-content {
             flex: 3;
-            margin-top: -.5em;
+            margin-top: -5.5em;
         }
     }
 
@@ -84,7 +79,7 @@ export const SavedJobsStyles = styled.div`
     and (-webkit-device-pixel-ratio: 3)
     and (orientation: portrait) { 
         .main-content {
-            margin-top: -5.3em;
+            margin-top: -8.2em;
         }
     }
 
@@ -92,7 +87,11 @@ export const SavedJobsStyles = styled.div`
     and (min-device-width: 411px) 
     and (min-device-height: 731px)  { 
         .title__searchLink {
-            margin-bottom: 6em;
+            margin-bottom: 5.5em;
+
+            .title {
+                margin-bottom: 2.2em;
+            }
         }
     }
 
@@ -104,13 +103,14 @@ export const SavedJobsStyles = styled.div`
         }
     }
 
+    // iPhone 6/7/8 Plus
     @media only screen 
     and (min-device-width: 414px) 
     and (min-device-height: 736px) 
     and (-webkit-device-pixel-ratio: 3)
     and (orientation: portrait) { 
         .main-content {
-            margin-top: -9em;
+            margin-top: -13em;
         }
     }
 
@@ -120,13 +120,24 @@ export const SavedJobsStyles = styled.div`
     and (min-device-height: 1024px) 
     and (-webkit-device-pixel-ratio: 3)
     and (orientation: portrait) { 
-        .main-content {
-            margin-top: 0;
+
+    
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        padding: 0 .5em;
+
+        .collection__banner {
+            margin-top: 7.5em;
         }
     }
 
 
-    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-        padding: 0;
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+        padding: 0 .5em;
+
+        .collection__banner {
+            margin-top: 14.5em;
+        }
     }
 `

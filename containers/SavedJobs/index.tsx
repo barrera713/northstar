@@ -2,10 +2,9 @@ import { JobCollection } from '@uikit/sections/JobCollection';
 import { Button } from 'antd';
 import { CollectionBanner } from 'components/CollectionBanner';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SavedJobsStyles } from './styles';
 import { Layout } from 'antd';
-import { LeftView } from '@uikit/sections/LeftView';
 const { Content } = Layout;
 
 
@@ -17,6 +16,12 @@ interface SavedJobs {
 
 
 export const SavedJobsContainer: React.FC<SavedJobs> = () => {
+
+    const [ savedCollection, setSavedCollection ] = useState()
+    useEffect(() => {
+        setSavedCollection(JSON.parse(localStorage.getItem("saved")));
+    }, []);
+
     return (
         <SavedJobsStyles>
             <main className="main-container">
@@ -28,8 +33,10 @@ export const SavedJobsContainer: React.FC<SavedJobs> = () => {
                 </div>
                 <div className='main-content'>
                 <Content>
-                    <CollectionBanner savedJobs={true} />
-                    <JobCollection />
+                    <div className="collection__banner">
+                        <CollectionBanner savedJobs={true} />
+                    </div>
+                    <JobCollection {...savedCollection} />
                 </Content>
                 </div>
             </main>

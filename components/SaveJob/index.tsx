@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeartOutlined } from '@ant-design/icons';
-import { saveInLocalStorage } from 'utils/saveJob';
+import { saveInLocalStorage, alreadySaved, removeFromLocalStorage } from 'utils/saveJob';
 import { notification } from 'antd';
 import { SaveJobStyles } from './styles';
 
@@ -12,12 +12,16 @@ const SaveJob: React.FC<SaveJobProps> = (props) => {
 
     const handleSaveJob = (job: object, e: any) => {
         e.stopPropagation();
-        saveInLocalStorage(job);
-        openNotification()
+        console.log(alreadySaved(job))
+        if(alreadySaved(job)) {
+            removeFromLocalStorage(job)
+        } else {
+            saveInLocalStorage(job);
+            openNotification()
+        }
     }
 
     const openNotification = () => {
-        console.log('notification')
         notification.info({
           message: `Successfully saved! :)`,
           description: "Navigate to 'Saved jobs' to view all saved jobs.",

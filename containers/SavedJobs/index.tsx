@@ -20,7 +20,7 @@ export const SavedJobsContainer: React.FC<SavedJobs> = () => {
     const [ savedCollection, setSavedCollection ] = useState()
     useEffect(() => {
         setSavedCollection(JSON.parse(localStorage.getItem("saved")));
-    }, [savedCollection]);
+    }, [ savedCollection ]);
 
     return (
         <SavedJobsStyles>

@@ -1,5 +1,5 @@
-import React from 'react';
-import { HeartOutlined } from '@ant-design/icons';
+import React, { useState, useEffect  } from 'react';
+import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 import { saveInLocalStorage, alreadySaved, removeFromLocalStorage } from 'utils/saveJob';
 import { notification } from 'antd';
 import { SaveJobStyles } from './styles';
@@ -10,15 +10,28 @@ interface SaveJobProps {
 
 const SaveJob: React.FC<SaveJobProps> = (props) => {
 
+    const [ save, setSave ] = useState(Boolean);
+
+    useEffect(() => {
+        if(alreadySaved(props.savedJob) === false) {
+            setSave(false)
+        } else {
+            setSave(true)
+        }
+    }, [ save ])
+
     const handleSaveJob = (job: object, e: any) => {
         e.stopPropagation();
+        saveInLocalStorage(job);
+        setSave(true);
+        openNotification()
+        
+    }
 
-        if(alreadySaved(job)) {
-            removeFromLocalStorage(job)
-        } else {
-            saveInLocalStorage(job);
-            openNotification()
-        }
+    const handleUnsaveJob = (job: object, e: any) => {
+        e.stopPropagation();
+        removeFromLocalStorage(job)
+        setSave(false);
     }
 
     const openNotification = () => {
@@ -32,10 +45,14 @@ const SaveJob: React.FC<SaveJobProps> = (props) => {
     return (
         <SaveJobStyles>
             <div className="save-job-button">
+            { save === false ? 
             <HeartOutlined
                 onClick={e => handleSaveJob(props.savedJob, e)}
                 className='card-save-button'
             />
+            :
+            <HeartFilled onClick={e => handleUnsaveJob(props.savedJob, e)} />
+            }
             </div>
         </SaveJobStyles>
     )

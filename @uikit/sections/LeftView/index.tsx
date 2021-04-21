@@ -52,7 +52,8 @@ export const LeftView: React.FC<LeftViewProps> = ({ handleForm }) => {
       <div className="header__navTools">
       <h2
       className='title'
-      > StriveDash
+      >
+        Northstar
       </h2>
       { width >= 1440 ? 
       <div>

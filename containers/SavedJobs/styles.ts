@@ -30,7 +30,6 @@ export const SavedJobsStyles = styled.div`
         flex: 3;
         max-width: 1000px;
     }
-
     
     @media (max-width: 1200px) {
         padding: 0 3.5em;
@@ -40,22 +39,21 @@ export const SavedJobsStyles = styled.div`
         }
 
         .title__searchLink {
+            max-width: 1000px;
             display: flex;
             flex-direction: row;
             margin-left: .75em;
             margin-top: 1.5em;
-            margin-right: 8em;
-            justify-content: space-evenly;
+            justify-content: space-between;
 
             h2 {
                 flex: 1;
             }
 
-            p {
+            a {
                 padding: .5em 0;
                 z-index: 99;
-                flex: 1;
-                text-align: right;
+                margin-right: 1em;
             }
         }
 
@@ -71,12 +69,6 @@ export const SavedJobsStyles = styled.div`
         .title__searchLink {
             margin-bottom: 3em;
             margin-left: .2em;
-
-            p {
-                position: relative;
-                left: 5em;
-            }
-            
         }
 
 
@@ -94,15 +86,6 @@ export const SavedJobsStyles = styled.div`
     and (orientation: portrait) { 
         .main-content {
             margin-top: -8.2em;
-        }
-
-
-        .title__searchLink {
-            
-            p {
-                margin-right: 0;
-
-            }
         }
     }
 

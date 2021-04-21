@@ -39,5 +39,9 @@ export const alreadySaved = (job: any) => {
 export const removeFromLocalStorage = (job: any) => {
     const getSavedJobs = JSON.parse(localStorage.getItem("saved"));
     const removeJob = getSavedJobs.filter((savedJob: any) => savedJob.id !== job.id);
-    localStorage.setItem("saved", JSON.stringify(removeJob));
+    if(removeJob.length === 0) {
+        localStorage.removeItem("saved");
+    } else {
+        localStorage.setItem("saved", JSON.stringify(removeJob));
+    }
 }

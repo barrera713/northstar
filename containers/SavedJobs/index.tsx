@@ -1,5 +1,5 @@
 import { JobCollection } from '@uikit/sections/JobCollection';
-import { Button } from 'antd';
+import { Empty } from 'antd';
 import { CollectionBanner } from 'components/CollectionBanner';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
@@ -18,11 +18,15 @@ interface SavedJobs {
 export const SavedJobsContainer: React.FC<SavedJobs> = () => {
 
     const [ savedCollection, setSavedCollection ] = useState()
+    const [ empty, setEmpty ] = useState(Boolean);
     useEffect(() => {
-        if(localStorage.getItem("saved") !== undefined) {
+        if(localStorage.getItem("saved")) {
             setSavedCollection(JSON.parse(localStorage.getItem("saved")));
+            setEmpty(false)
+        } else {
+            setEmpty(true)
         }
-    }, [ ]);
+    }, []);
 
     return (
         <SavedJobsStyles>
@@ -36,7 +40,12 @@ export const SavedJobsContainer: React.FC<SavedJobs> = () => {
                     <div className="collection__banner">
                         <CollectionBanner savedJobs={true} />
                     </div>
+                    {
+                    savedCollection === undefined ? 
+                    <Empty />
+                    :
                     <JobCollection {...savedCollection} />
+                    }
                 </Content>
                 </div>
             </main>

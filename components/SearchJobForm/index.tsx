@@ -43,7 +43,7 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
   };
 
   const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
+    console.log('Failed message here', errorInfo);
   };
 
 

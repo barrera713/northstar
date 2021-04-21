@@ -3,10 +3,11 @@ import styled from 'styled-components';
 
 interface StyleJobCollectionProps  {
     show: boolean;
+    error: boolean;
 }
 
 export const StyledJobCollection = styled.div<StyleJobCollectionProps>`
-    background-color: ${(props: StyleJobCollectionProps) => props.show ? 'inherit' : '#616161'};
+    background-color: ${(props: StyleJobCollectionProps) => props.show || props.error ? 'inherit' : '#616161'};
     max-width: 1000px;
     border-radius: 10px;
     overlfow: hidden;
@@ -25,6 +26,18 @@ export const StyledJobCollection = styled.div<StyleJobCollectionProps>`
 
     .job-collection-container::-webkit-scrollbar {
         display: none;
+    }
+
+
+    .error__vector {
+        text-align: center;
+        font-size: 8px;
+
+        img {
+            max-width: 300px;
+            max-height: 300px;
+            margin-bottom: 3em;
+        }
     }
 
     @media (max-width: 576px) {

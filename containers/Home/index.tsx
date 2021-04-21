@@ -19,6 +19,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
   // const [hideScroll, setHideScroll] = useState(false);
   const [ data, setData ] = useState(Object);
   const [ loading, setLoading ] = useState(Boolean);
+  const [ error, setError ] = useState(Boolean);
 
  
   interface FetchParams {
@@ -56,7 +57,8 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
       setLoading(false);
       setData(sortFromNewest(json));
     } else {
-      // error message
+      console.log("there was in error");
+      setError(true);
     }
   }
 
@@ -75,7 +77,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
       <div className='main-content'>
       <Content>
           <CollectionBanner {...data} />
-          <JobCollection {...data} loading={loading} /> 
+          <JobCollection {...data} loading={loading} error={error} /> 
       </Content>
       </div>
     </main>

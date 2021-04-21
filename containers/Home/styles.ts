@@ -19,7 +19,6 @@ export const StyledHomeContainer = styled.div`
         flex: 3;
         max-width: 1000px;
     }
-
     
     @media (max-width: 1200px) {
  

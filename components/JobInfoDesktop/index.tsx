@@ -31,7 +31,6 @@ export const JobInfoDesktop: React.FC<JobInfoProps> = (props) => {
         subContainer.scrollIntoView({ behavior: "smooth"});
     }, [props.jobDetails])
 
-    console.log(created_at)
     return (<JobInfoStyles {...props}>
         <div className="main-container">  
             <div id="sub-container">

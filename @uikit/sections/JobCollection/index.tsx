@@ -95,7 +95,7 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
                 </div>
                 :
                 <Row 
-                gutter={[{ sm: 8, md: 10, lg: 12, xl: 12 }, { md: 2, lg: 4, xl: 10 }]}  
+                gutter={[{ sm: 8, md: 10, lg: 12, xl: 12 }, { md: 2, lg: 4, xl: 12 }]}  
                 >
                 {Object.values(props).map((job: object) => ( 
                     <Col span={8} xs={24} sm={24} md={8} lg={show ? 24 : 8 } onClick={() => handleJobInfoView(job)} >

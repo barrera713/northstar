@@ -44,25 +44,39 @@ export const SavedJobsStyles = styled.div`
             flex-direction: row;
             margin-left: .75em;
             margin-top: 1.5em;
-            justify-content: space-between;
+            margin-right: 8em;
+            justify-content: space-evenly;
+
+            h2 {
+                flex: 1;
+            }
 
             p {
                 padding: .5em 0;
+                z-index: 99;
+                flex: 1;
+                text-align: right;
             }
         }
 
         .main-content {
             flex: 3;
-            margin-top: -13.7em;
+            margin-top: -14em;
         }
     }
-
+   
     @media (max-width: 576px) {
         padding: 0 1em;
 
         .title__searchLink {
             margin-bottom: 3em;
             margin-left: .2em;
+
+            p {
+                position: relative;
+                left: 5em;
+            }
+            
         }
 
 
@@ -80,6 +94,15 @@ export const SavedJobsStyles = styled.div`
     and (orientation: portrait) { 
         .main-content {
             margin-top: -8.2em;
+        }
+
+
+        .title__searchLink {
+            
+            p {
+                margin-right: 0;
+
+            }
         }
     }
 
@@ -114,15 +137,6 @@ export const SavedJobsStyles = styled.div`
         }
     }
 
-
-    @media only screen 
-    and (min-device-width: 768px) 
-    and (min-device-height: 1024px) 
-    and (-webkit-device-pixel-ratio: 3)
-    and (orientation: portrait) { 
-
-    
-    }
 
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
         padding: 0 .5em;

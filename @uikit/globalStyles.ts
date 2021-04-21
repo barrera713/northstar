@@ -18,8 +18,8 @@ const GlobalStyle = createGlobalStyle`
     background: #944dff;
     border-color: #944dff;
     &:hover,&:focus {
-      background: #944dff;
-      border-color: #944dff;
+      background: #8533ff;
+      border-color: #8533ff;
     }
   }
 `;

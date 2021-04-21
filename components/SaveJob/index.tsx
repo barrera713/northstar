@@ -36,9 +36,14 @@ const SaveJob: React.FC<SaveJobProps> = (props) => {
 
     const openNotification = () => {
         notification.info({
-          message: `Successfully saved! :)`,
-          description: "Navigate to 'Saved jobs' to view all saved jobs.",
-            placement: 'bottomLeft'
+            style: {
+                backgroundColor: "#8533ff",
+                borderRadius: "10px",
+            },
+            message: <p style={{color: "#ECECED" }}>Successfully saved!</p>,
+            description: "Navigate to 'Saved jobs' to view all saved jobs.",
+            placement: 'bottomLeft',
+            duration: 2
         });
     };
 

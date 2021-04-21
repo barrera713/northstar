@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { JobCard } from 'components/JobCard';
 import { StyledJobCollection } from './styles';
-import { Col, Row } from 'antd';
+import { Col, notification, Row } from 'antd';
 import { JobInfoDesktop } from 'components/JobInfoDesktop';
 import JobInfoModal from 'components/JobInfoModal';
 import { Alert } from 'antd';
@@ -53,19 +53,32 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
     const handleCancel = () => {
         setIsModalVisible(false);
     };
+
+    const errorMessage = () => {
+        notification.info({
+            style: {
+                backgroundColor: "#CF6679",
+                borderRadius: "10px",
+            },
+            message: <p style={{color: "#ECECED" }}>Server error</p>,
+            description: "Something went wrong, please try again.",
+            placement: 'bottomLeft',
+            duration: 2
+        });
+    };
     
     useEffect(() => {
-      
     }, [width])
 
 
     const { error, loading } = props;
     return (
         <StyledJobCollection show={show} error={error}>
-            { error ?
+            { error ? 
             <>
             <div className="error__vector">
-                <Alert message="Something went wrong" type="error"/>
+                {/* <Alert message="Something went wrong" type="error"/> */}
+                {errorMessage()}
                 <img src="./fatal_error.png" />
                 <p>Illustration by <a href="https://icons8.com/illustrations/author/5dca95ef01d036001426e2bc">Ivan Haidutski</a> from <a href="https://icons8.com/illustrations">Ouch!</a></p>
             </div>

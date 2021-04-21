@@ -20,6 +20,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
   const [ data, setData ] = useState(Object);
   const [ loading, setLoading ] = useState(Boolean);
   const [ error, setError ] = useState(Boolean);
+  const [ noResults, setNoResults ] = useState(Boolean);
 
  
   interface FetchParams {
@@ -50,34 +51,39 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
       BASE += `&location=${location}`
     }
 
-    const searchJobs = await fetch(`https://cors-anywhere.herokuapp.com/${BASE}`);
-    setLoading(true);
-    if(searchJobs.status === 200) {
-      const json = await searchJobs.json();
-      setLoading(false);
-      setData(sortFromNewest(json));
-    } else {
-      console.log("there was in error");
+    try {
+      const searchJobs = await fetch(`https://cors-anywhere.herokuapp.com/${BASE}`);
+      setLoading(true);
+      // if(searchJobs.status === 200) {
+        const json = await searchJobs.json();
+        setLoading(false);
+        if(json.length === 0) {
+          setNoResults(true)
+        }
+        setData(sortFromNewest(json));
+      // } 
+    } catch (err) {
+      // console.log(err)
       setError(true);
     }
   }
 
-
   useEffect(() => {
     setData(props)
   }, [])
+
 
   return (
   <Layout>
     <StyledHomeContainer>
     <main className='main-container'>
       <div className='left-view'>
-      <LeftView handleForm={(payload: object) => handleSearchForm(payload)}  />
+      <LeftView handleForm={(payload: object) => handleSearchForm(payload)} />
       </div>
       <div className='main-content'>
       <Content>
           <CollectionBanner {...data} />
-          <JobCollection {...data} loading={loading} error={error} /> 
+          <JobCollection {...data} loading={loading} error={error} noResults={noResults} /> 
       </Content>
       </div>
     </main>

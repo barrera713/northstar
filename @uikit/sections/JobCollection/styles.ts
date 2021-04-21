@@ -4,10 +4,11 @@ import styled from 'styled-components';
 interface StyleJobCollectionProps  {
     show: boolean;
     error: boolean;
+    empty: boolean;
 }
 
 export const StyledJobCollection = styled.div<StyleJobCollectionProps>`
-    background-color: ${(props: StyleJobCollectionProps) => props.show || props.error ? 'inherit' : '#616161'};
+    background-color: ${(props: StyleJobCollectionProps) => props.show || props.error || props.empty ? 'inherit' : '#616161'};
     max-width: 1000px;
     border-radius: 10px;
     overlfow: hidden;
@@ -37,6 +38,16 @@ export const StyledJobCollection = styled.div<StyleJobCollectionProps>`
             max-width: 300px;
             max-height: 300px;
             margin-bottom: 3em;
+        }
+    }
+
+    .no__data {
+        text-align: center;
+
+        img {
+            max-height: 300px;
+            max-width: 300px;
+            margin-top: 4em;
         }
     }
 

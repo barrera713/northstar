@@ -41,7 +41,7 @@ export const SavedJobsContainer: React.FC<SavedJobs> = () => {
                         <CollectionBanner savedJobs={true} />
                     </div>
                     {
-                    savedCollection === undefined ? 
+                    empty ? 
                     <Empty />
                     :
                     <JobCollection {...savedCollection} />

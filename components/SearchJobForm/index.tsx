@@ -1,5 +1,5 @@
 import { Form, Input, Radio, Button } from 'antd';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FormStyles } from './styles';
 import { alphaCharacters }from 'utils/tools';
 
@@ -42,9 +42,12 @@ export const SearchJobForm: React.FC<FormProps> = ({handleForm}) => {
     form.resetFields();
   };
 
+  
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed message here', errorInfo);
   };
+
+
 
 
   return (

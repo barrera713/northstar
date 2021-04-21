@@ -4,13 +4,13 @@ import { StyledJobCollection } from './styles';
 import { Col, notification, Row } from 'antd';
 import { JobInfoDesktop } from 'components/JobInfoDesktop';
 import JobInfoModal from 'components/JobInfoModal';
-import { Alert } from 'antd';
 
 
 
 interface JobCollectionProps {
     loading?: boolean;
     error?: boolean;
+    noResults?: boolean;
 };
 
 
@@ -29,6 +29,7 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
         return () => window.removeEventListener('resize', updateSize);
     }, []);
 
+    // determines which component to render according to current width size
     const handleJobInfoView = (job: object) => {
         setViewJob(job);    
         if(width >= 1440) {
@@ -71,13 +72,13 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
     }, [width])
 
 
-    const { error, loading } = props;
+    const { error, loading, noResults } = props;
+
     return (
-        <StyledJobCollection show={show} error={error}>
+        <StyledJobCollection show={show} error={error} empty={noResults} >
             { error ? 
             <>
             <div className="error__vector">
-                {/* <Alert message="Something went wrong" type="error"/> */}
                 {errorMessage()}
                 <img src="./fatal_error.png" />
                 <p>Illustration by <a href="https://icons8.com/illustrations/author/5dca95ef01d036001426e2bc">Ivan Haidutski</a> from <a href="https://icons8.com/illustrations">Ouch!</a></p>
@@ -88,6 +89,11 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
             <div 
             className='job-collection-container'
             >
+                { noResults ? 
+                <div className="no__data">
+                    <img src="./no_data.svg" />
+                </div>
+                :
                 <Row 
                 gutter={[{ sm: 8, md: 10, lg: 12, xl: 12 }, { md: 2, lg: 4, xl: 10 }]}  
                 >
@@ -97,6 +103,7 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
                 </Col>
                 ))}
                 </Row>
+                }
             </div>
         { show ? <JobInfoDesktop show={show} close={handleClose} jobDetails={viewJob} /> : null}
         </div>

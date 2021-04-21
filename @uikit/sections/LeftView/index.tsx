@@ -5,6 +5,7 @@ import { SearchJobForm } from 'components/SearchJobForm';
 import SearchFormModal from '../SearchFormModal';
 import { Button } from 'antd';
 import Link from 'next/link';
+import { OmitProps } from 'antd/lib/transfer/ListBody';
 
 
 
@@ -14,7 +15,7 @@ interface LeftViewProps {
 }
 
 
-export const LeftView: React.FC<LeftViewProps> = ({handleForm}) => { 
+export const LeftView: React.FC<LeftViewProps> = ({ handleForm }) => { 
   const [width, setWidth] = React.useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -29,7 +30,6 @@ export const LeftView: React.FC<LeftViewProps> = ({handleForm}) => {
     return () => window.removeEventListener('resize', updateSize);
   }, []);
 
-
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -41,6 +41,11 @@ export const LeftView: React.FC<LeftViewProps> = ({handleForm}) => {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
+
+  const sendPayloadToForm = (payload) => {
+    handleForm(payload);
+    handleCancel()
+  }
 
   return (
       <StyledLeftView>
@@ -68,7 +73,7 @@ export const LeftView: React.FC<LeftViewProps> = ({handleForm}) => {
         onOk={handleOk} 
         showModal={showModal} 
         visible={isModalVisible} 
-        handleForm={(payload: object) => handleForm(payload)}
+        handleForm={(payload: object) => sendPayloadToForm(payload)}
         /> 
          <div 
           className='saved-jobs-container'>

@@ -13,6 +13,15 @@ const GlobalStyle = createGlobalStyle`
   p {
     color: #b3b3b3;
   }
+
+  .ant-btn-primary,.ant-back-top-content {
+    background: #944dff;
+    border-color: #944dff;
+    &:hover,&:focus {
+      background: #944dff;
+      border-color: #944dff;
+    }
+  }
 `;
  
 export default GlobalStyle;

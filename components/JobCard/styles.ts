@@ -7,6 +7,7 @@ export const JobCardStyles = styled.div`
         border-radius: 10px;
         background: #4B4B4B;
         border: none;
+        height: 300px;
     }
 
     .meta-title {
@@ -26,6 +27,7 @@ export const JobCardStyles = styled.div`
         max-height: 130px;
         margin-bottom: 10px;
         overflow: hidden;
+        height: 150px;
 
         p {
             white-space: nowrap;

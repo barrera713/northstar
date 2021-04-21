@@ -54,7 +54,8 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
                     {description === null ? 'Click on company link for more info' : null}
                 </div>
                 <div className='card-footer'>
-                    <Button type="primary" 
+                    <Button type="primary"
+                    className="details__btn" 
                     shape='round'>
                         Details
                     </Button>

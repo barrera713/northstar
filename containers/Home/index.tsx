@@ -53,7 +53,8 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
     }
 
     try {
-      const searchJobs = await fetch(`https://cors-anywhere.herokuapp.com/${BASE}`);
+      // const searchJobs = await fetch(`https://cors-anywhere.herokuapp.com/${BASE}`);
+      const searchJobs = await fetch(BASE);
       setLoading(true);
       // if(searchJobs.status === 200) {
         const json = await searchJobs.json();
@@ -81,7 +82,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
     <StyledHomeContainer>
     <main className='main-container'>
       <div className='left-view'>
-      <LeftView handleForm={(payload: object) => handleSearchForm(payload)} />
+      <LeftView handleForm={ (payload: object) => handleSearchForm(payload)} />
       </div>
       <div className='main-content'>
       <Content>

@@ -1,6 +1,5 @@
 import { HomeContainer } from 'containers/Home';
 import { sortFromNewest } from "utils/tools";
-import React from "React";
 
 /*
   // use state to store build time data

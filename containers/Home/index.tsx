@@ -38,23 +38,23 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
     repeat logic for all other params IF they exist
     */
    const { description, location, fullTime } = params;
-   let BASE = "https://jobs.github.com/positions.json?";
+   let BASE_URL = "https://jobs.github.com/positions.json?";
 
     if(description !== undefined) {
-      BASE += `description=${description}`;
+      BASE_URL += `description=${description}`;
     };
 
     if(fullTime === true) {
-      BASE += `&full_time=true`;
+      BASE_URL += `&full_time=true`;
     };
 
     if(location !== undefined) {
-      BASE += `&location=${location}`
+      BASE_URL += `&location=${location}`
     }
 
     try {
-      // const searchJobs = await fetch(`https://cors-anywhere.herokuapp.com/${BASE}`);
-      const searchJobs = await fetch(BASE);
+      // const searchJobs = await fetch(`https://cors-anywhere.herokuapp.com/${BASE_URL}`);
+      const searchJobs = await fetch(`https://api.allorigins.win/raw?url=${BASE_URL}`);
       setLoading(true);
       // if(searchJobs.status === 200) {
         const json = await searchJobs.json();

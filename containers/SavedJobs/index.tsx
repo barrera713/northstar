@@ -2,7 +2,7 @@ import { JobCollection } from '@uikit/sections/JobCollection';
 import { Empty } from 'antd';
 import { CollectionBanner } from 'components/CollectionBanner';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SavedJobsStyles } from './styles';
 import { Layout } from 'antd';
 const { Content } = Layout;

@@ -7,6 +7,7 @@ export const JobCardStyles = styled.div`
         border-radius: 10px;
         background: #4B4B4B;
         border: none;
+        margin-bottom: .75em;
     }
 
     .meta-title {

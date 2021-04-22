@@ -21,6 +21,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
   const [ loading, setLoading ] = useState(Boolean);
   const [ error, setError ] = useState(Boolean);
   const [ noResults, setNoResults ] = useState(Boolean);
+  const [ defaultJobs, setDefaultJobs ] = useState(Boolean);
 
  
   interface FetchParams {
@@ -61,6 +62,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
           setNoResults(true)
         }
         setData(sortFromNewest(json));
+        setDefaultJobs(false);
       // } 
     } catch (err) {
       // console.log(err)
@@ -69,6 +71,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
   }
 
   useEffect(() => {
+    setDefaultJobs(true);
     setData(props)
   }, [])
 
@@ -82,7 +85,7 @@ export const HomeContainer: React.FC<HomeContainerProps> = (props) => {
       </div>
       <div className='main-content'>
       <Content>
-          <CollectionBanner {...data} />
+          <CollectionBanner searchedJobs={data} defaultJobs={defaultJobs} />
           <JobCollection {...data} loading={loading} error={error} noResults={noResults} /> 
       </Content>
       </div>

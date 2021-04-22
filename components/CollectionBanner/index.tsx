@@ -1,22 +1,27 @@
 import { FilterStyles } from './styles';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 interface BannerProps {
     savedJobs?: boolean;
+    defaultJobs: boolean;
+    searchedJobs: [];
 }
 
-export const CollectionBanner: React.FC<BannerProps> = (props) => { 
+export const CollectionBanner: React.FC<BannerProps> = ({ searchedJobs, savedJobs, defaultJobs }) => { 
 
-    const bannerTitle = props.savedJobs ? "Your saved jobs" : `Showing ${Object.keys(props).length} related jobs`;
+    const updateBanner = savedJobs ? "Your saved jobs" : `Showing ${Object.keys(searchedJobs).length} related jobs`;
 
     return (
         <FilterStyles>
             <div
             className='main-container' >
-                <h3 className='title'>   
-                    {bannerTitle}
-                </h3>
+                { defaultJobs ? 
+                <h3 className='title'>
+                    Newest full-time roles 
+                </h3> :
+                <h3 className='title'>{updateBanner}</h3>
+                }
             </div>
         </FilterStyles>
     );

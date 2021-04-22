@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 interface BannerProps {
     savedJobs?: boolean;
     defaultJobs?: boolean;
-    searchedJobs: [];
+    searchedJobs?: [];
 }
 
 export const CollectionBanner: React.FC<BannerProps> = ({ searchedJobs, savedJobs, defaultJobs }) => { 

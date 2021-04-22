@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 interface BannerProps {
     savedJobs?: boolean;
-    defaultJobs: boolean;
+    defaultJobs?: boolean;
     searchedJobs: [];
 }
 

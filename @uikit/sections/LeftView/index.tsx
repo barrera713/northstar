@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { StyledLeftView } from './styles';
 import { HeartOutlined, SearchOutlined } from '@ant-design/icons'
 import { SearchJobForm } from 'components/SearchJobForm';
 import SearchFormModal from '../SearchFormModal';
-import { Button } from 'antd';
 import Link from 'next/link';
-import { OmitProps } from 'antd/lib/transfer/ListBody';
 
 
 
@@ -50,11 +48,13 @@ export const LeftView: React.FC<LeftViewProps> = ({ handleForm }) => {
   return (
       <StyledLeftView>
       <div className="header__navTools">
+      <Link href="/">
       <h2
       className='title'
       >
         Northstar
       </h2>
+      </Link>
       { width >= 1440 ? 
       <div>
       <div 

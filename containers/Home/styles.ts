@@ -25,6 +25,7 @@ export const StyledHomeContainer = styled.div`
         .main-container {
             flex-direction: column;
             height: 100vh;
+            margin-top: .1em;
         }
 
         .main-content {
@@ -63,12 +64,12 @@ export const StyledHomeContainer = styled.div`
         }
     }
 
-    @media only screen and (min-width: 414px) and (orientation: landscape) { 
+    // @media only screen and (min-width: 414px) and (orientation: landscape) { 
         
-        .main-content {
-            margin-top: -7em;
-        }
-    }
+    //     .main-content {
+    //         margin-top: -7em;
+    //     }
+    // }
 
 
     @media only screen 

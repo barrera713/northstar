@@ -36,6 +36,7 @@ export const SavedJobsStyles = styled.div`
         
         .main-container {
             flex-direction: column;
+
         }
 
         .title__searchLink {
@@ -109,16 +110,16 @@ export const SavedJobsStyles = styled.div`
     @media only screen and (min-width: 414px) and (orientation: portrait) { 
         
         .main-content {
-            margin-top: -7.9em;
+            margin-top: -7em;
         }
     }
 
-    @media only screen and (min-width: 414px) and (orientation: landscape) { 
+    // @media only screen and (min-width: 414px) and (orientation: landscape) { 
         
-        .main-content {
-            margin-top: -8.9em;
-        }
-    }
+    //     .main-content {
+    //         margin-top: -8.9em;
+    //     }
+    // }
     
 
     // iPhone 6/7/8 Plus

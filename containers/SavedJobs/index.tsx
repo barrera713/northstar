@@ -32,7 +32,7 @@ export const SavedJobsContainer: React.FC<SavedJobs> = () => {
         <SavedJobsStyles>
             <main className="main-container">
                 <div className="title__searchLink">
-                    <h2 className="title">StriveDash</h2>
+                    <h2 className="title">Northstar</h2>
                     <Link href="/">back to search</Link>
                 </div>
                 <div className='main-content'>

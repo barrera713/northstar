@@ -151,7 +151,12 @@ export const StyledJobCollection = styled.div<StyleJobCollectionProps>`
         }
     }
 
-    
+    @media only screen and (min-width: 414px) and (max-width: 767px) { 
+       .job-collection-container {
+           max-height: 550px;
+       }
+    }
+
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
         .job-collection-container {  
             max-height: 810px;

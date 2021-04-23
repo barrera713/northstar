@@ -46,9 +46,6 @@ export const SavedJobsStyles = styled.div`
             margin-top: 1.5em;
             justify-content: space-between;
 
-            h2 {
-                flex: 1;
-            }
 
             a {
                 padding: .5em 0;
@@ -70,7 +67,6 @@ export const SavedJobsStyles = styled.div`
             margin-bottom: 3em;
             margin-left: .2em;
         }
-
 
         .main-content {
             flex: 3;
@@ -94,9 +90,10 @@ export const SavedJobsStyles = styled.div`
     and (min-device-height: 731px)  { 
         .title__searchLink {
             margin-bottom: 5.5em;
-
+            
             .title {
                 margin-bottom: 2.2em;
+                margin-left: .05em;
             }
         }
     }
@@ -106,6 +103,13 @@ export const SavedJobsStyles = styled.div`
     and (min-device-height: 823px)  { 
         .title__searchLink {
             margin-bottom: 7.5em;
+        }
+    }
+
+    @media only screen and (min-width: 414px) and (orientation: portrait) { 
+        
+        .main-content {
+            margin-top: -9.7em;
         }
     }
 

@@ -56,6 +56,13 @@ export const StyledHomeContainer = styled.div`
         }
     }
 
+    @media only screen and (min-width: 414px) and (orientation: portrait) { 
+        
+        .main-content {
+            margin-top: -8em;
+        }
+    }
+
 
     @media only screen 
     and (min-device-width: 768px) 

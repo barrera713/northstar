@@ -110,7 +110,7 @@ export const SavedJobsStyles = styled.div`
     @media only screen and (min-width: 414px) and (orientation: portrait) { 
         
         .main-content {
-            margin-top: -7em;
+            margin-top: -8em;
         }
     }
 

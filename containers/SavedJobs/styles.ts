@@ -129,7 +129,7 @@ export const SavedJobsStyles = styled.div`
     and (-webkit-device-pixel-ratio: 3)
     and (orientation: portrait) { 
         .main-content {
-            margin-top: -13em;
+            margin-top: -11.1em;
         }
     }
 

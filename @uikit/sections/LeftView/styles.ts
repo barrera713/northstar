@@ -16,9 +16,9 @@ export const StyledLeftView = styled.div`
         text-align: left;
         margin-bottom: 70px;
         align-items: center;
-            &:hover {
-                cursor: pointer;
-            }
+        &:hover {
+            cursor: pointer;
+        }
 
         p {
             margin-left: .5em;

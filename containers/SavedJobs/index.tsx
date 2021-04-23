@@ -29,7 +29,9 @@ export const SavedJobsContainer: React.FC<SavedJobs> = () => {
     }, []);
 
     return (
-        <SavedJobsStyles>
+        <Layout>
+
+            <SavedJobsStyles>
             <main className="main-container">
                 <div className="title__searchLink">
                     <Link href="/">
@@ -52,5 +54,6 @@ export const SavedJobsContainer: React.FC<SavedJobs> = () => {
                 </div>
             </main>
         </SavedJobsStyles>
+        </Layout>
     );
 };

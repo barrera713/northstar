@@ -59,7 +59,14 @@ export const StyledHomeContainer = styled.div`
     @media only screen and (min-width: 414px) and (orientation: portrait) { 
         
         .main-content {
-            margin-top: -8em;
+            margin-top: -6em;
+        }
+    }
+
+    @media only screen and (min-width: 414px) and (orientation: landscape) { 
+        
+        .main-content {
+            margin-top: -7em;
         }
     }
 

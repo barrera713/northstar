@@ -109,9 +109,17 @@ export const SavedJobsStyles = styled.div`
     @media only screen and (min-width: 414px) and (orientation: portrait) { 
         
         .main-content {
-            margin-top: -9.7em;
+            margin-top: -7.9em;
         }
     }
+
+    @media only screen and (min-width: 414px) and (orientation: landscape) { 
+        
+        .main-content {
+            margin-top: -8.9em;
+        }
+    }
+    
 
     // iPhone 6/7/8 Plus
     @media only screen 

@@ -29,7 +29,7 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
         return () => window.removeEventListener('resize', updateSize);
     }, []);
 
-    // determines which component to render according to current width size
+    // determines which component to render according to current window width size
     const handleJobInfoView = (job: object) => {
         setViewJob(job);    
         if(width >= 1440) {
@@ -75,7 +75,7 @@ export const JobCollection: React.FC<JobCollectionProps> = (props) => {
     const { error, loading, noResults } = props;
 
     return (
-        <StyledJobCollection show={show} error={error} empty={noResults} >
+        <StyledJobCollection show={show} error={error} empty={noResults}>
             { error ? 
             <>
             <div className="error__vector">

@@ -6,9 +6,11 @@ export const validCompanyUrl = (url: string) => {
     return restOfUrl.length > 5 ? true : false;
 };
 
+/*
+    @Params string representing date
+    @Return number of days since job post
+*/
 export const numOfDays = (date: string) => {
-    // @Params string representing date
-    // @Return number of days since job post
 
     const postDate = new Date(date).getTime();
     const today = new Date().getTime();
